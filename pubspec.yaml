@@ -88,3 +88,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  assets:
+    - images/logobesar.png
+    - images/panah.png
+    - images/homebawah.png
+    - images/loginbawah.png
