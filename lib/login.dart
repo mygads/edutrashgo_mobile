@@ -1,26 +1,6 @@
+import 'package:edutrashgo_mobile/register.dart';
+import 'package:edutrashgo_mobile/homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:edutrashgo_mobile/homepage.dart'; 
-import 'package:edutrashgo_mobile/register.dart'; 
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'EduTrashgo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Login(),
-    );
-  }
-}
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -50,7 +30,6 @@ class _LoginState extends State<Login> {
         const SnackBar(content: Text('Login successful!')),
       );
       // Navigate to HomeScreen
-
       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
     } else {
       // Failed login
@@ -225,8 +204,8 @@ class _LoginState extends State<Login> {
                                     ),
                                   ),
                                   onPressed: () {
-                                    // TODO: Implement register logic
-                                    Register();
+                                    // Navigate to RegisterPage
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Register()));
                                   },
                                   child: const Text(
                                     'Register',
