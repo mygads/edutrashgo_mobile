@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeBerita extends StatefulWidget {
   const HomeBerita({super.key});
@@ -31,7 +32,7 @@ class _HomeBeritaState extends State<HomeBerita> {
                     decoration: TextDecoration.none,
                     fontSize: 18,
                     color: Color(0xff000000),
-                    fontFamily: 'Poppins-SemiBold',
+                    fontFamily: 'Poppins',
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -49,7 +50,7 @@ class _HomeBeritaState extends State<HomeBerita> {
                     decoration: TextDecoration.none,
                     fontSize: 16,
                     color: Color(0xff000000),
-                    fontFamily: 'Poppins-SemiBold',
+                    fontFamily: 'Poppins',
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -98,6 +99,7 @@ class _HomeBeritaState extends State<HomeBerita> {
                             Text(
                               'Trash',
                               style: TextStyle(
+                                fontFamily: 'Poppins',
                                 color: Color(0xFF31CD63),
                                 fontSize: 12,
                                 fontWeight: FontWeight.normal,
@@ -107,8 +109,10 @@ class _HomeBeritaState extends State<HomeBerita> {
                               'WatchOS 10 preview: widgets all the way down',
                               maxLines: 2,
                               overflow: TextOverflow
-                                  .ellipsis, // Menggunakan ellipsis untuk menggantikan clip
+                                  .ellipsis,
+                               // Menggunakan ellipsis untuk menggantikan clip
                               style: TextStyle(
+                                fontFamily: 'Poppins',
                                 color: Color(0xFF000000),
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -128,6 +132,7 @@ class _HomeBeritaState extends State<HomeBerita> {
                       Text(
                         'Jul 10, 2023 • 4 min ago',
                         style: TextStyle(
+                          fontFamily: 'Poppins',
                           color: Color(0xFF888888),
                           fontSize: 10,
                           fontWeight: FontWeight.normal,

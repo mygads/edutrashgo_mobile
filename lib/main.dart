@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:edutrashgo_mobile/berita.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        textTheme: GoogleFonts.poppinsTextTheme(),
+        
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
