@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:edutrashgo_mobile/berita.dart';
+import 'package:edutrashgo_mobile/detail_berita.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeBerita(),
+      home: const DetailBerita(),
     );
   }
 }
