@@ -1,5 +1,5 @@
 import 'package:edutrashgo_mobile/register.dart';
-import 'package:edutrashgo_mobile/homepage.dart';
+// import 'package:edutrashgo_mobile/homepage.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -52,7 +52,7 @@ class _LoginState extends State<Login> {
               Expanded(
                 child: Container(
                   color: const Color(0xFF06825F),
-                  padding: const EdgeInsets.only( top: 64),
+                  padding: const EdgeInsets.only( top: 54),
                   width: double.infinity,
                   height: double.infinity,
                   child: SingleChildScrollView(
@@ -65,12 +65,13 @@ class _LoginState extends State<Login> {
                           child: const Text(
                             'Hello',
                             style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
                               fontSize: 46,
                             ),
                           ),
                         ),
                         Container(
-                          margin: const EdgeInsets.only( bottom: 36, left: 35, right: 35),
+                          margin: const EdgeInsets.only( bottom: 20, left: 35, right: 35),
                           width: double.infinity,
                           child: const Text(
                             'Again!',
@@ -81,7 +82,7 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                         Container(
-                          margin: const EdgeInsets.only( bottom: 54, left: 34, right: 34),
+                          margin: const EdgeInsets.only( bottom: 44, left: 34, right: 34),
                           width: double.infinity,
                           child: const Text(
                             'Selamat Datang Kembali\ndi edutrashgo.com',
