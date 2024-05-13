@@ -11,35 +11,38 @@ class _DetailBeritaState extends State<DetailBerita> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: const Row(
+            children: <Widget>[
+              Expanded(
+                // Expanded untuk menempatkan teks di tengah
+                child: Text(
+                  'Tentang Berita',
+                  // textAlign: TextAlign.center, // Atur teks ke tengah
+                  style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 18,
+                    color: Color(0xff000000),
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+
+
+
+
+        
         body: SingleChildScrollView(
             padding: const EdgeInsets.only(
-                top: 46.0, right: 24.0, left: 24.0, bottom: 46.0),
+                top: 16.0, right: 24.0, left: 24.0, bottom: 46.0),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  //Row back berita
-                  const Row(
-                    children: <Widget>[
-                      Icon(Icons.arrow_back),
-                      SizedBox(width: 9),
-                      Text(
-                        'Tentang Berita',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontSize: 18,
-                            color: Color(0xff000000),
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(
-                    height: 16,
-                  ),
-
                   //Image Berita
                   Image.asset(
                     'images/image_112013230.png',
@@ -86,7 +89,9 @@ class _DetailBeritaState extends State<DetailBerita> {
                               fontWeight: FontWeight.normal),
                         ),
 
-                        SizedBox(height: 24,),
+                        SizedBox(
+                          height: 24,
+                        ),
 
                         //Isi Berita
                         Text(
