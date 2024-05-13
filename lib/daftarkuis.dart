@@ -1,4 +1,4 @@
-//import 'package:edutrashgo_mobile/kuis.dart';
+import 'package:edutrashgo_mobile/kuis.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -111,7 +111,10 @@ class _DaftarKuisPage extends State<DaftarKuis> {
               ),
               onTap: () {
                 // Implementasi aksi ketika kuis diklik
-                // Contoh: Navigator.push...
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Kuis()),
+                );
               },
             ),
           );
