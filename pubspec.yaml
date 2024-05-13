@@ -62,7 +62,10 @@ flutter:
   assets:
   - assets/images/JenisSampah.png
   - assets/images/DaurUlang.png
-  #   - images/a_dot_ham.jpeg
+  - assets/images/Organik.png
+  - assets/images/Anorganik.png
+  - assets/images/B3.png
+  
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
