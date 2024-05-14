@@ -16,7 +16,14 @@ class JenisSampah extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: const Text('Jenis - Jenis Sampah'),
+        title: const Text(
+            'Modul Pembelajaran',
+            style: TextStyle(
+              fontFamily: 'Poppins', // Specify the font family
+              fontSize: 18, // Specify the font size
+              fontWeight: FontWeight.w600, // Specify the font weight/ Specify the font color
+            ),
+          ),
         centerTitle: true,
       ),
       body: Container(
@@ -32,7 +39,7 @@ class JenisSampah extends StatelessWidget {
                   'Yuk, kita temukan jenis sampah! Kenali dan jaga bumi bersih!',
                   style: TextStyle(
                     fontSize: 18.0,
-                    // fontFamily: 
+                    fontFamily: 'ABeeZee',
                     ),
                   textAlign: TextAlign.center,
                   
