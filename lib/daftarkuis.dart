@@ -23,12 +23,6 @@ class _DaftarKuisPage extends State<DaftarKuis> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Daftar Kuis'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context); // Kembali ke halaman sebelumnya
-          },
-        ),
       ),
       body: ListView.builder(
         itemCount: daftarKuis.length,

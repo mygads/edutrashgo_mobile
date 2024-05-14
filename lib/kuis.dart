@@ -82,12 +82,6 @@ class _KuisPage extends State<Kuis> {
             Text('${_currentQuestionIndex + 1}/${_questions.length}'),
           ],
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context); // Kembali ke halaman sebelumnya
-          },
-        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(25),
