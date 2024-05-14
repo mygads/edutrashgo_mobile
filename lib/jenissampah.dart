@@ -1,3 +1,6 @@
+import 'package:edutrashgo_mobile/anorganik.dart';
+import 'package:edutrashgo_mobile/b3.dart';
+import 'package:edutrashgo_mobile/organik.dart';
 import 'package:flutter/material.dart';
 
 class JenisSampah extends StatelessWidget {
@@ -41,7 +44,7 @@ class JenisSampah extends StatelessWidget {
               children: [
             GestureDetector(
               onTap: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => const JenisSampah()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const Organik()));
               },
               child: Container(
                 height: 170,
@@ -62,7 +65,7 @@ class JenisSampah extends StatelessWidget {
                 const SizedBox(height: 20.0),
                 GestureDetector(
               onTap: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => const DaurUlang()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const Anorganik()));
               },
               child: Container(
                 height: 170,
@@ -83,7 +86,7 @@ class JenisSampah extends StatelessWidget {
                 const SizedBox(height: 20.0),
                 GestureDetector(
               onTap: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => const DaurUlang()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const B3()));
               },
               child: Container(
                 height: 170,
