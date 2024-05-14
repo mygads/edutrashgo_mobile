@@ -27,14 +27,14 @@ class _LoginState extends State<Login> {
     if (_users.any((user) => user['username'] == username && user['password'] == password)) {
       // Successful login
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Login successful!')),
+        const SnackBar(content: Text('Login Berhasil!')),
       );
       // Navigate to HomeScreen
       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
     } else {
       // Failed login
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Invalid username or password.')),
+        const SnackBar(content: Text('Username dan Password Salah.')),
       );
     }
   }
@@ -42,190 +42,203 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          constraints: const BoxConstraints.expand(),
-          color: const Color(0xFFFFFFFF),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Container(
-                  color: const Color(0xFF06825F),
-                  padding: const EdgeInsets.only( top: 54),
+      backgroundColor: const Color(0xff06825f),
+      body: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: MediaQuery.of(context).size.height,
+          ),
+          child: IntrinsicHeight(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 55,
+                      margin: const EdgeInsets.only(left: 35, top: 54),
+                      child: const Text(
+                        'Hello',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w600,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontSize: 46,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 20, left: 35),
+                      child: const Text(
+                        'Again!',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w600,
+                          color: Colors.yellow,
+                          fontSize: 46,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 44, left: 34, right: 34),
+                      width: double.infinity,
+                      child: const Text(
+                        'Selamat Datang Kembali\ndi edutrashgo.com',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  height: 550,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('images/loginbawah.png'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  padding: const EdgeInsets.only(
+                    top: 80,
+                    left: 33,
+                    right: 33,
+                  ),
                   width: double.infinity,
-                  height: double.infinity,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only( left: 35, right: 35),
-                          width: double.infinity,
-                          child: const Text(
-                            'Hello',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              fontSize: 46,
-                            ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 6),
+                        child: const Text(
+                          'Username*',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 14,
                           ),
                         ),
-                        Container(
-                          margin: const EdgeInsets.only( bottom: 20, left: 35, right: 35),
-                          width: double.infinity,
-                          child: const Text(
-                            'Again!',
-                            style: TextStyle(
-                              color: Colors.yellow,
-                              fontSize: 46,
-                            ),
+                      ),
+                      TextField(
+                        controller: _usernameController,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          fillColor: Colors.white,
+                          filled: true,
+                          hintText: 'Masukkan username',
+                        ),
+                      ),
+                      const SizedBox(height: 21),
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 6),
+                        child: const Text(
+                          'Password*',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 14,
                           ),
                         ),
-                        Container(
-                          margin: const EdgeInsets.only( bottom: 44, left: 34, right: 34),
-                          width: double.infinity,
-                          child: const Text(
-                            'Selamat Datang Kembali\ndi edutrashgo.com',
-                            style: TextStyle(
-                              color: Color(0xFFFFFFFF),
-                              fontSize: 20,
-                            ),
+                      ),
+                      TextField(
+                        controller: _passwordController,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          fillColor: Colors.white,
+                          filled: true,
+                          hintText: 'Masukkan password',
+                        ),
+                      ),
+                      const SizedBox(height: 46),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF06C167),
+                          minimumSize: const Size.fromHeight(50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6),
                           ),
                         ),
-                        IntrinsicHeight(
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('images/loginbawah.png'),
-                                fit: BoxFit.cover,
+                        onPressed: _login,
+                        child: const Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xFFFFFFFF),
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      IntrinsicHeight(
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 7, top: 10),
+                          width: double.infinity,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                color: const Color(0x40000000),
+                                margin: const EdgeInsets.only(right: 8),
+                                width: 140,
+                                height: 2,
                               ),
-                            ),
-                            padding: const EdgeInsets.only( top: 93, bottom: 111, left: 33, right: 33),
-                            width: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  margin: const EdgeInsets.only( bottom: 6),
-                                  child: const Text(
-                                    'Username*',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                    ),
-                                  ),
+                              const Text(
+                                'atau',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromARGB(255, 102, 102, 102),
+                                  fontSize: 14,
                                 ),
-                                TextField(
-                                  controller: _usernameController,
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(6),
-                                    ),
-                                    fillColor: Colors.white,
-                                    filled: true,
-                                    hintText: 'Enter your username',
-                                  ),
-                                ),
-                                const SizedBox(height: 21),
-                                Container(
-                                  margin: const EdgeInsets.only( bottom: 6),
-                                  child: const Text(
-                                    'Password*',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                                TextField(
-                                  controller: _passwordController,
-                                  obscureText: true,
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(6),
-                                    ),
-                                    fillColor: Colors.white,
-                                    filled: true,
-                                    hintText: 'Enter your password',
-                                  ),
-                                ),
-                                const SizedBox(height: 46),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xFF06C167),
-                                    minimumSize: const Size.fromHeight(50),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(6),
-                                    ),
-                                  ),
-                                  onPressed: _login,
-                                  child: const Text(
-                                    'Login',
-                                    style: TextStyle(fontSize: 16, color: Color(0xFFFFFFFF), fontFamily: 'Poppins-SemiBold', fontWeight: FontWeight.normal),
-                                  ),
-                                ),
-                                IntrinsicHeight(
-                                  child: Container(
-                                    margin: const EdgeInsets.only( bottom: 7, top: 10),
-                                    width: double.infinity,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          color: const Color(0x40000000),
-                                          margin: const EdgeInsets.only( right: 8),
-                                          width: 150,
-                                          height: 2,
-                                          child: const SizedBox(),
-                                        ),
-                                        Container(
-                                          margin: const EdgeInsets.only( right: 8,),
-                                          child: const Text(
-                                            'atau',
-                                            style: TextStyle(
-                                              color: Color(0xFF000000),
-                                              fontSize: 14,
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          color: const Color(0x40000000),
-                                          width: 150,
-                                          height: 2,
-                                          child: const SizedBox(),
-                                        ),
-                                      ]
-                                    ),
-                                  ),
-                                ),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xFF333333),
-                                    minimumSize: const Size.fromHeight(50),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(6),
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    // Navigate to RegisterPage
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Register()));
-                                  },
-                                  child: const Text(
-                                    'Register',
-                                    style: TextStyle(fontSize: 16, color: Color(0xFFFFFFFF), fontFamily: 'Poppins-SemiBold', fontWeight: FontWeight.normal),
-                                  ),
-                                ),
-                              ]
-                            ),
+                              ),
+                              Container(
+                                color: const Color(0x40000000),
+                                margin: const EdgeInsets.only(left: 8),
+                                width: 140,
+                                height: 2,
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    )
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF333333),
+                          minimumSize: const Size.fromHeight(50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                        ),
+                        onPressed: () {
+                          // Navigate to RegisterPage
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Register()));
+                        },
+                        child: const Text(
+                          'Register',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xFFFFFFFF),
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
