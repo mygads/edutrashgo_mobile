@@ -1,6 +1,6 @@
 import 'package:edutrashgo_mobile/register.dart';
 // import 'package:edutrashgo_mobile/homepage.dart';
-// import 'package:edutrashgo_mobile/admin/homepageadmin.dart';
+import 'package:edutrashgo_mobile/admin/homepageadmin.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -36,15 +36,17 @@ class _LoginState extends State<Login> {
     
     if (role == 'admin') {
       // Navigate to HomeScreenAdmin
-      // Navigator.pushReplacement(
-      //     context, MaterialPageRoute(builder: (context) => const HomeScreenAdmin()));
+      Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => const HomeScreenAdmin())
+      );
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Selamat Datang Admin!')),
       );
     } else if (role == 'user') {
       // Navigate to HomeScreen
       // Navigator.pushReplacement(
-      //     context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+      //     context, MaterialPageRoute(builder: (context) => const HomeScreen())
+      // );
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Selamat Datang!')),
       );
