@@ -86,6 +86,8 @@ flutter:
   - assets/images/B3 (5).png
   - assets/images/B3 (6).png
   - assets/images/B3 (7).png
+  - assets/images/Thumbnail (1).png
+  - assets/images/Thumbnail (2).png
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -124,6 +126,17 @@ flutter:
     fonts:
       - asset: fonts/AbeeZee-Regular.ttf
         weight: 400
+  - family: Roboto
+    fonts:
+      - asset: fonts/Roboto-Regular.ttf
+        weight: 400
+      - asset: fonts/Roboto-Medium.ttf
+        weight: 500
+  - family: Alata
+    fonts:
+      - asset: fonts/Alata-Regular.ttf
+        weight: 400
+
 
   #   - family: Trajan Pro
   #     fonts:
