@@ -1,660 +1,543 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:edutrashgo_mobile/berita.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Image.asset(
-              'images/coursemate_text.png', // Ganti dengan path gambar yang sesuai
-              height: 32, // Sesuaikan tinggi gambar sesuai kebutuhan
-              fit: BoxFit.contain,
-            ),
-          ],
-        ),
-        backgroundColor: const Color(0xFF333333),
-        actions: <Widget>[
-          IconButton(
-            // Membuat IconButton dengan ikon Icons.shopping_bag.
-            icon: const Icon(
-              Icons.person,
-              color: Colors.white,
-              size: 25.0,
-            ),
-            // Menambahkan tooltip yang akan muncul saat pengguna mengarahkan kursor ke tombol.
-            tooltip: 'Profile',
-            // Menetapkan fungsi yang akan dijalankan ketika tombol ditekan.
-            onPressed: () {
-              // Fungsi yang akan dijalankan saat tombol ditekan.
-              // Isi fungsi dapat diisi dengan kode yang ingin dijalankan ketika tombol ditekan.
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //       builder: (context) =>
-
-              //       ), // Ganti CartPage dengan nama halaman Anda.
-              // );
-            },
-          ),
-        ],
-      ),
-      body: SafeArea(
-        child: Container(
-          constraints: const BoxConstraints.expand(),
-          color: const Color(0xFFFFFFFF),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        appBar: AppBar(
+          title: Row(
             children: [
-              Expanded(
-                child: Container(
-                  color: const Color(0xFFFFFFFF),
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: SingleChildScrollView(
-                      child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      IntrinsicHeight(
-                        child: SizedBox(
-                          width: double.infinity,
-                          child: Stack(children: [
-                            Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  IntrinsicHeight(
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(16),
-                                        color: const Color(0xFFF1F0F0),
-                                      ),
-                                      padding: const EdgeInsets.only(
-                                          top: 25,
-                                          bottom: 53,
-                                          left: 24,
-                                          right: 24),
-                                      width: double.infinity,
-                                      child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            IntrinsicHeight(
-                                              child: Container(
-                                                margin: const EdgeInsets.only(
-                                                    bottom: 27),
-                                                width: double.infinity,
-                                                child: Row(children: [
-                                                  Expanded(
-                                                    child: Container(
-                                                      margin:
-                                                          const EdgeInsets.only(
-                                                              right: 4),
-                                                      width: double.infinity,
-                                                      child: const Text(
-                                                        'Mari kita buat bumi bersih',
-                                                        style: TextStyle(
-                                                          color:
-                                                              Color(0xFF363636),
-                                                          fontSize: 18,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            left: 2, right: 2),
-                                                    width: 16,
-                                                    height: 16,
-                                                    decoration:
-                                                        const BoxDecoration(
-                                                      image: DecorationImage(
-                                                          image: NetworkImage(
-                                                              "https://i.imgur.com/1tMFzp8.png"),
-                                                          fit: BoxFit.cover),
-                                                    ),
-                                                    child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Expanded(
-                                                            child: Container(
-                                                                margin:
-                                                                    const EdgeInsets
-                                                                        .only(
-                                                                        top: 2),
-                                                                height: 12,
-                                                                width: double
-                                                                    .infinity,
-                                                                child: Image
-                                                                    .network(
-                                                                  'https://i.imgur.com/1tMFzp8.png',
-                                                                  fit: BoxFit
-                                                                      .fill,
-                                                                )),
-                                                          ),
-                                                        ]),
-                                                  ),
-                                                ]),
-                                              ),
-                                            ),
-                                            IntrinsicHeight(
-                                              child: Container(
-                                                margin: const EdgeInsets.only(
-                                                    bottom: 14),
-                                                width: double.infinity,
-                                                child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      InkWell(
-                                                        onTap: () {},
-                                                        child: IntrinsicHeight(
-                                                          child: Container(
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          16),
-                                                              color: const Color(
-                                                                  0xFFFFFFFF),
-                                                            ),
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .only(
-                                                                    top: 28,
-                                                                    bottom: 15),
-                                                            width: 160,
-                                                            child: Column(
-                                                                children: [
-                                                                  IntrinsicHeight(
-                                                                    child:
-                                                                        Container(
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(16),
-                                                                        color: const Color(
-                                                                            0xFF0DCE98),
-                                                                      ),
-                                                                      padding: const EdgeInsets
-                                                                          .all(
-                                                                          17),
-                                                                      margin: const EdgeInsets
-                                                                          .only(
-                                                                          bottom:
-                                                                              13,
-                                                                          left:
-                                                                              44,
-                                                                          right:
-                                                                              44),
-                                                                      width: double
-                                                                          .infinity,
-                                                                      child: Column(
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children: [
-                                                                            SizedBox(
-                                                                                width: 38,
-                                                                                height: 38,
-                                                                                child: Image.network(
-                                                                                  'https://i.imgur.com/1tMFzp8.png',
-                                                                                  fit: BoxFit.fill,
-                                                                                )),
-                                                                          ]),
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    margin: const EdgeInsets
-                                                                        .only(
-                                                                        bottom:
-                                                                            10,
-                                                                        left:
-                                                                            36,
-                                                                        right:
-                                                                            36),
-                                                                    width: double
-                                                                        .infinity,
-                                                                    child:
-                                                                        const Text(
-                                                                      'Modul\nPembelajaran',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: Color(
-                                                                            0xFF363636),
-                                                                        fontSize:
-                                                                            14,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    margin: const EdgeInsets
-                                                                        .symmetric(
-                                                                        horizontal:
-                                                                            61),
-                                                                    child:
-                                                                        const Text(
-                                                                      '2 Modul',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: Color(
-                                                                            0xFF82A6B0),
-                                                                        fontSize:
-                                                                            10,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ]),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      InkWell(
-                                                        onTap: () {},
-                                                        child: IntrinsicHeight(
-                                                          child: Container(
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          16),
-                                                              color: const Color(
-                                                                  0xFFFFFFFF),
-                                                            ),
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .symmetric(
-                                                                    vertical:
-                                                                        28),
-                                                            width: 160,
-                                                            child: Column(
-                                                                children: [
-                                                                  IntrinsicHeight(
-                                                                    child:
-                                                                        Container(
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(16),
-                                                                        color: const Color(
-                                                                            0xFF0DCE98),
-                                                                      ),
-                                                                      padding: const EdgeInsets.only(
-                                                                          top:
-                                                                              17,
-                                                                          bottom:
-                                                                              17,
-                                                                          left:
-                                                                              16,
-                                                                          right:
-                                                                              16),
-                                                                      margin: const EdgeInsets
-                                                                          .only(
-                                                                          bottom:
-                                                                              13,
-                                                                          left:
-                                                                              44,
-                                                                          right:
-                                                                              44),
-                                                                      width: double
-                                                                          .infinity,
-                                                                      child: Column(
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children: [
-                                                                            SizedBox(
-                                                                                width: 38,
-                                                                                height: 38,
-                                                                                child: Image.network(
-                                                                                  'https://i.imgur.com/1tMFzp8.png',
-                                                                                  fit: BoxFit.fill,
-                                                                                )),
-                                                                          ]),
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    margin: const EdgeInsets
-                                                                        .only(
-                                                                        bottom:
-                                                                            12,
-                                                                        left:
-                                                                            64,
-                                                                        right:
-                                                                            64),
-                                                                    child:
-                                                                        const Text(
-                                                                      'Kuis',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: Color(
-                                                                            0xFF363636),
-                                                                        fontSize:
-                                                                            14,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    margin: const EdgeInsets
-                                                                        .symmetric(
-                                                                        horizontal:
-                                                                            64),
-                                                                    child:
-                                                                        const Text(
-                                                                      '3 Kuis',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: Color(
-                                                                            0xFF82A6B0),
-                                                                        fontSize:
-                                                                            10,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ]),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ]),
-                                              ),
-                                            ),
-                                            IntrinsicHeight(
-                                              child: SizedBox(
-                                                width: double.infinity,
-                                                child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      InkWell(
-                                                        onTap: () {},
-                                                        child: IntrinsicHeight(
-                                                          child: Container(
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          16),
-                                                              color: const Color(
-                                                                  0xFFFFFFFF),
-                                                            ),
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .only(
-                                                                    top: 28,
-                                                                    bottom: 28,
-                                                                    left: 45,
-                                                                    right: 45),
-                                                            width: 160,
-                                                            child: Column(
-                                                                children: [
-                                                                  IntrinsicHeight(
-                                                                    child:
-                                                                        Container(
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(16),
-                                                                        color: const Color(
-                                                                            0xFF0DCE98),
-                                                                      ),
-                                                                      padding: const EdgeInsets
-                                                                          .all(
-                                                                          17),
-                                                                      margin: const EdgeInsets
-                                                                          .only(
-                                                                          bottom:
-                                                                              14),
-                                                                      width: double
-                                                                          .infinity,
-                                                                      child: Column(
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children: [
-                                                                            Expanded(
-                                                                              child: SizedBox(
-                                                                                  height: 38,
-                                                                                  width: double.infinity,
-                                                                                  child: Image.network(
-                                                                                    'https://i.imgur.com/1tMFzp8.png',
-                                                                                    fit: BoxFit.fill,
-                                                                                  )),
-                                                                            ),
-                                                                          ]),
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    margin: const EdgeInsets
-                                                                        .only(
-                                                                        bottom:
-                                                                            11),
-                                                                    child:
-                                                                        const Text(
-                                                                      'Tantangan',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: Color(
-                                                                            0xFF363636),
-                                                                        fontSize:
-                                                                            14,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  const Text(
-                                                                    '3 Tantangan',
-                                                                    style:
-                                                                        TextStyle(
-                                                                      color: Color(
-                                                                          0xFF82A6B0),
-                                                                      fontSize:
-                                                                          10,
-                                                                    ),
-                                                                  ),
-                                                                ]),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      InkWell(
-                                                        onTap: () {},
-                                                        child: IntrinsicHeight(
-                                                          child: Container(
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          16),
-                                                              color: const Color(
-                                                                  0xFFFFFFFF),
-                                                            ),
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .symmetric(
-                                                                    vertical:
-                                                                        28),
-                                                            width: 160,
-                                                            child: Column(
-                                                                children: [
-                                                                  IntrinsicHeight(
-                                                                    child:
-                                                                        Container(
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(16),
-                                                                        color: const Color(
-                                                                            0xFF0DCE98),
-                                                                      ),
-                                                                      padding: const EdgeInsets
-                                                                          .all(
-                                                                          17),
-                                                                      margin: const EdgeInsets
-                                                                          .only(
-                                                                          bottom:
-                                                                              13,
-                                                                          left:
-                                                                              43,
-                                                                          right:
-                                                                              43),
-                                                                      width: double
-                                                                          .infinity,
-                                                                      child: Column(
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children: [
-                                                                            SizedBox(
-                                                                                width: 38,
-                                                                                height: 38,
-                                                                                child: Image.network(
-                                                                                  'https://i.imgur.com/1tMFzp8.png',
-                                                                                  fit: BoxFit.fill,
-                                                                                )),
-                                                                          ]),
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    margin: const EdgeInsets
-                                                                        .only(
-                                                                        bottom:
-                                                                            12,
-                                                                        left:
-                                                                            60,
-                                                                        right:
-                                                                            60),
-                                                                    child:
-                                                                        const Text(
-                                                                      'Berita',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: Color(
-                                                                            0xFF363636),
-                                                                        fontSize:
-                                                                            14,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    margin: const EdgeInsets
-                                                                        .symmetric(
-                                                                        horizontal:
-                                                                            61),
-                                                                    child:
-                                                                        const Text(
-                                                                      '3 Berita',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: Color(
-                                                                            0xFF82A6B0),
-                                                                        fontSize:
-                                                                            10,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ]),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ]),
-                                              ),
-                                            ),
-                                          ]),
-                                    ),
-                                  ),
-                                ]),
-                            Positioned(
-                              top: 0,
-                              right: 0,
-                              width: 390,
-                              height: 213,
-                              child: Container(
-                                padding: const EdgeInsets.only(right: 12),
-                                transform:
-                                    Matrix4.translationValues(0, -202, 0),
-                                width: 390,
-                                height: 213,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://i.imgur.com/1tMFzp8.png"),
-                                      fit: BoxFit.cover),
-                                ),
-                                child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        margin: const EdgeInsets.only(
-                                            top: 72, bottom: 3, left: 251),
-                                        child: const Text(
-                                          'EDU TRASHGO',
-                                          style: TextStyle(
-                                            color: Color(0xFFFFFFFF),
-                                            fontSize: 18,
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        margin:
-                                            const EdgeInsets.only(left: 142),
-                                        width: double.infinity,
-                                        child: const Text(
-                                          'Solusi belajar menyenangkan untuk mencintai lingkungan',
-                                          style: TextStyle(
-                                            color: Color(0xFFFFFFFF),
-                                            fontSize: 14,
-                                          ),
-                                          textAlign: TextAlign.right,
-                                        ),
-                                      ),
-                                    ]),
-                              ),
-                            ),
-                          ]),
-                        ),
-                      ),
-                      IntrinsicHeight(
-                        child: Container(
-                          color: const Color(0xFF333333),
-                          padding: const EdgeInsets.only(
-                              top: 24, bottom: 24, left: 23, right: 23),
-                          width: double.infinity,
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                    margin: const EdgeInsets.only(bottom: 9),
-                                    width: 24,
-                                    height: 27,
-                                    child: Image.network(
-                                      'https://i.imgur.com/1tMFzp8.png',
-                                      fit: BoxFit.fill,
-                                    )),
-                                const Text(
-                                  '©2024 | EduTrashgo',
-                                  style: TextStyle(
-                                    color: Color(0xFFFFFFFF),
-                                    fontSize: 10,
-                                  ),
-                                ),
-                              ]),
-                        ),
-                      ),
-                    ],
-                  )),
-                ),
+              Image.asset(
+                'images/coursemate_text.png', // Ganti dengan path gambar yang sesuai
+                height: 32, // Sesuaikan tinggi gambar sesuai kebutuhan
+                fit: BoxFit.contain,
               ),
             ],
           ),
+          backgroundColor: const Color(0xFF333333),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(
+                Icons.person,
+                color: Colors.white,
+                size: 25.0,
+              ),
+              // Menambahkan tooltip yang akan muncul saat pengguna mengarahkan kursor ke tombol.
+              tooltip: 'Profile',
+              // Menetapkan fungsi yang akan dijalankan ketika tombol ditekan.
+              onPressed: () {
+                // Fungsi yang akan dijalankan saat tombol ditekan.
+                // Isi fungsi dapat diisi dengan kode yang ingin dijalankan ketika tombol ditekan.
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) =>
+
+                //       ), // Ganti CartPage dengan nama halaman Anda.
+                // );
+              },
+            ),
+          ],
         ),
-      ),
-    );
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              //Stack Home Background
+              Stack(
+                alignment: Alignment.centerRight,
+                children: <Widget>[
+                  Image.asset(
+                    'images/home-bg.png',
+                    fit: BoxFit.fill,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(right: 11.0),
+                    child: SizedBox(
+                      width: 250,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'EDU TRASHGO',
+                            style: TextStyle(
+                              color: Color(0xFFFFFFFF),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                          Directionality(
+                            textDirection: TextDirection.rtl,
+                            child: Text(
+                              'Solusi belajar menyenangkan untuk mencintai lingkungan',
+                              style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontSize: 14,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              Container(
+                padding: EdgeInsets.fromLTRB(25, 13, 25, 25),
+                color: const Color(0xFFF1F0F0),
+                child: Container(
+                  // color: Colors.black,
+                  child: Column(
+                    children: [
+                      const Row(
+                        children: [
+                          Text(
+                            'Mari kita buat bumi bersih',
+                            style: TextStyle(
+                              color: Color(0xFF363636),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      //Card
+                      Container(
+                        padding: const EdgeInsets.only(top: 31),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Spacer(),
+                                //Card 1
+                                Card(
+                                    elevation: 0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    color: Colors.white,
+                                    clipBehavior: Clip.hardEdge,
+                                    child: InkWell(
+                                      splashColor: Colors.blue.withAlpha(30),
+                                      onTap: () {
+                                        //Navigasi
+                                      },
+                                      //Ukuran dari Card
+                                      child: SizedBox(
+                                        width: 160,
+                                        height: 177,
+                                        child: Column(
+                                          children: [
+                                            //Isi dari Card
+                                            Container(
+                                              padding: EdgeInsets.only(top: 25),
+                                              // color: Color.fromARGB(
+                                              //     255, 235, 109, 109),
+                                              width: 126,
+                                              child: Column(
+                                                children: <Widget>[
+                                                  //Icon Card
+                                                  Stack(
+                                                    alignment: Alignment.center,
+                                                    children: [
+                                                      Container(
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        16),
+                                                            color: Color(
+                                                                0xFF0DCE98),
+                                                          ),
+                                                          width: 72,
+                                                          height: 72,
+                                                          child:
+                                                              const SizedBox()),
+                                                      const Icon(
+                                                        Icons.library_books,
+                                                        color: Colors.white,
+                                                        size: 44.0,
+                                                      ),
+                                                    ],
+                                                  ),
+
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+
+                                                  const Text(
+                                                    'Modul Pembelajaran',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      color: Color(0xFF363636),
+                                                      fontSize: 14,
+                                                      fontFamily: 'Poppins',
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                  // SizedBox(
+                                                  //   height: 7,
+                                                  // ),
+                                                  const Text(
+                                                    '2 Modul',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF82A6B0),
+                                                      fontSize: 10,
+                                                      fontFamily: 'Poppins',
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )),
+                                Spacer(),
+                                //Card 2
+                                Card(
+                                    elevation: 0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    color: Color(0xFFFFFFFF),
+                                    clipBehavior: Clip.hardEdge,
+                                    child: InkWell(
+                                      splashColor: Colors.blue.withAlpha(30),
+                                      onTap: () {
+                                        //Navigasi
+                                      },
+
+                                      //Ukuran dari Card
+                                      child: SizedBox(
+                                        width: 160,
+                                        height: 177,
+                                        child: Column(
+                                          children: [
+                                            //Isi dari Card
+                                            Container(
+                                              padding: EdgeInsets.only(top: 25),
+                                              // color: Color.fromARGB(
+                                              //     255, 235, 109, 109),
+                                              width: 126,
+                                              child: Column(
+                                                children: <Widget>[
+                                                  //Icon Card
+                                                  Stack(
+                                                    alignment: Alignment.center,
+                                                    children: [
+                                                      Container(
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        16),
+                                                            color: Color(
+                                                                0xFF0DCE98),
+                                                          ),
+                                                          width: 72,
+                                                          height: 72,
+                                                          child:
+                                                              const SizedBox()),
+                                                      const Icon(
+                                                        Icons.quiz,
+                                                        color: Colors.white,
+                                                        size: 44.0,
+                                                      ),
+                                                    ],
+                                                  ),
+
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+
+                                                  const Text(
+                                                    'Kuis',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      color: Color(0xFF363636),
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontFamily: 'Poppins',
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 7,
+                                                  ),
+                                                  const Text(
+                                                    '3 Kuis',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF82A6B0),
+                                                      fontSize: 10,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      fontFamily: 'Poppins',
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )),
+
+                                Spacer(),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 13,
+                            ),
+                            Row(
+                              children: [
+                                Spacer(),
+                                //Card 3
+                                Card(
+                                  elevation: 0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16),
+                                  ),
+                                  color: Color(0xFFFFFFFF),
+                                  clipBehavior: Clip.hardEdge,
+                                  child: InkWell(
+                                    splashColor: Colors.blue.withAlpha(30),
+                                    onTap: () {
+                                      //Navigasi
+                                    },
+
+                                    //Ukuran dari Card
+                                    child: SizedBox(
+                                      width: 160,
+                                      height: 177,
+                                      child: Column(
+                                        children: [
+                                          //Isi dari Card
+                                          Container(
+                                            padding: EdgeInsets.only(top: 25),
+                                            // color: Color.fromARGB(
+                                            //     255, 235, 109, 109),
+                                            width: 126,
+                                            child: Column(
+                                              children: <Widget>[
+                                                //Icon Card
+                                                Stack(
+                                                  alignment: Alignment.center,
+                                                  children: [
+                                                    Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(16),
+                                                          color:
+                                                              Color(0xFF0DCE98),
+                                                        ),
+                                                        width: 72,
+                                                        height: 72,
+                                                        child:
+                                                            const SizedBox()),
+                                                    const Icon(
+                                                      Icons.emoji_events,
+                                                      color: Colors.white,
+                                                      size: 44.0,
+                                                    ),
+                                                  ],
+                                                ),
+
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+
+                                                const Text(
+                                                  'Tantangan',
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    color: Color(0xFF363636),
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontFamily: 'Poppins',
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height: 7,
+                                                ),
+                                                const Text(
+                                                  '3 Tantangan',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF82A6B0),
+                                                    fontSize: 10,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    fontFamily: 'Poppins',
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+
+                                Spacer(),
+
+                                //Card 4
+                                Card(
+                                  elevation: 0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16),
+                                  ),
+                                  color: Color(0xFFFFFFFF),
+                                  clipBehavior: Clip.hardEdge,
+                                  child: InkWell(
+                                    splashColor: Colors.blue.withAlpha(30),
+                                    onTap: () {
+                                      //Navigasi
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => HomeBerita()),
+                                      );
+                                    },
+
+                                    //Ukuran Card
+                                    child: SizedBox(
+                                      width: 160,
+                                      height: 177,
+                                      child: Column(
+                                        children: [
+                                          //Isi dari Card
+                                          Container(
+                                            padding: EdgeInsets.only(top: 25),
+                                            // color: Color.fromARGB(
+                                            //     255, 235, 109, 109),
+                                            width: 126,
+                                            child: Column(
+                                              children: <Widget>[
+                                                //Icon Card
+                                                Stack(
+                                                  alignment: Alignment.center,
+                                                  children: [
+                                                    Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(16),
+                                                          color:
+                                                              Color(0xFF0DCE98),
+                                                        ),
+                                                        width: 72,
+                                                        height: 72,
+                                                        child:
+                                                            const SizedBox()),
+                                                    const Icon(
+                                                      Icons.newspaper,
+                                                      color: Colors.white,
+                                                      size: 44.0,
+                                                    ),
+                                                  ],
+                                                ),
+
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+
+                                                const Text(
+                                                  'Berita',
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    color: Color(0xFF363636),
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontFamily: 'Poppins',
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height: 7,
+                                                ),
+                                                const Text(
+                                                  '3 Berita',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF82A6B0),
+                                                    fontSize: 10,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    fontFamily: 'Poppins',
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+
+                                Spacer(),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              //Footer
+              Expanded(
+                  child: Container(
+                  color: Color(0xFF333333),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding:
+                              EdgeInsets.only(left: 20, top: 10, bottom: 6),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Spacer(),
+                              Image.asset(
+                                'images/icon-app.png',
+                                width: 24,
+                                height: 27,
+                              ),
+                              Spacer(),
+                              Text(
+                                '©2024 | EduTrashgo',
+                                style: TextStyle(
+                                  color: Color(0xFFFFFFFF),
+                                  fontSize: 10,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+
+                              Spacer()
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+            ]));
   }
 }
