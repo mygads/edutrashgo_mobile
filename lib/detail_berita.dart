@@ -42,7 +42,7 @@ class _DetailBeritaState extends State<DetailBerita> {
                 children: <Widget>[
                   //Image Berita
                   Image.asset(
-                    'images/image_112013230.png',
+                    'assets/images/image_112013230.png',
                     width: 363,
                     height: 266,
                     fit: BoxFit.cover,

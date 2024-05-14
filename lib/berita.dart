@@ -102,7 +102,7 @@ class _HomeBeritaState extends State<HomeBerita> {
                         Row(
                           children: [
                             Image.asset(
-                              'images/image_I112013248441468.png',
+                              'assets/images/image-berita.png',
                               width: 80,
                               height: 62,
                               fit: BoxFit.fill,
@@ -204,7 +204,7 @@ class _HomeBeritaState extends State<HomeBerita> {
                         Row(
                           children: [
                             Image.asset(
-                              'images/image_I112013248441468.png',
+                              'assets/images/image-berita.png',
                               width: 80,
                               height: 62,
                               fit: BoxFit.fill,

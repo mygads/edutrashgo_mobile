@@ -17,12 +17,12 @@ class _DaftarModulState extends State<DaftarModul> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            // Aksi ketika tombol panah ke kiri ditekan
-          },
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back),
+        //   onPressed: () {
+        //     // Aksi ketika tombol panah ke kiri ditekan
+        //   },
+        // ),
         title: const Text(
             'Modul Pembelajaran',
             style: TextStyle(

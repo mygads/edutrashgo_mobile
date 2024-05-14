@@ -2,6 +2,7 @@ import 'package:edutrashgo_mobile/register.dart';
 // import 'package:edutrashgo_mobile/homepage.dart';
 // import 'package:edutrashgo_mobile/admin/homepageadmin.dart';
 import 'package:flutter/material.dart';
+import 'package:edutrashgo_mobile/homescreen.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -43,8 +44,8 @@ class _LoginState extends State<Login> {
       );
     } else if (role == 'user') {
       // Navigate to HomeScreen
-      // Navigator.pushReplacement(
-      //     context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const HomeScreen()));
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Selamat Datang!')),
       );

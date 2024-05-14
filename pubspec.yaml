@@ -88,11 +88,13 @@ flutter:
   - assets/images/B3 (6).png
   - assets/images/B3 (7).png
   - assets/images/Thumbnail (1).png
-  - assets/images/Thumbnail (2).png
-  - images/logobesar.png
-  - images/panah.png
-  - images/homebawah.png
-  - images/loginbawah.png
+  - assets/images/home-bg.png
+  - assets/images/icon-app.png
+  - assets/images/coursemate_text.png
+  - assets/images/image_112013230.png
+  - assets/images/image-berita.png
+
+  
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -151,3 +153,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+asset:
+  - images/
+  

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:edutrashgo_mobile/berita.dart';
+import "package:edutrashgo_mobile/daftarmodul.dart";
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
           title: Row(
             children: [
               Image.asset(
-                'images/coursemate_text.png', // Ganti dengan path gambar yang sesuai
+                'assets/images/coursemate_text.png', // Ganti dengan path gambar yang sesuai
                 height: 32, // Sesuaikan tinggi gambar sesuai kebutuhan
                 fit: BoxFit.contain,
               ),
@@ -52,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 children: <Widget>[
                   Image.asset(
-                    'images/home-bg.png',
+                    'assets/images/home-bg.png',
                     fit: BoxFit.fill,
                   ),
                   const Padding(
@@ -131,6 +132,11 @@ class HomeScreen extends StatelessWidget {
                                       splashColor: Colors.blue.withAlpha(30),
                                       onTap: () {
                                         //Navigasi
+                                        Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => DaftarModul()),
+                                      );
                                       },
                                       //Ukuran dari Card
                                       child: SizedBox(
@@ -516,7 +522,7 @@ class HomeScreen extends StatelessWidget {
                             children: [
                               Spacer(),
                               Image.asset(
-                                'images/icon-app.png',
+                                'assets/images/icon-app.png',
                                 width: 24,
                                 height: 27,
                               ),
