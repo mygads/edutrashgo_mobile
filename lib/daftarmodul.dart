@@ -23,7 +23,14 @@ class _DaftarModulState extends State<DaftarModul> {
             // Aksi ketika tombol panah ke kiri ditekan
           },
         ),
-        title: const Text('Modul Pembelajaran'),
+        title: const Text(
+            'Modul Pembelajaran',
+            style: TextStyle(
+              fontFamily: 'Poppins', // Specify the font family
+              fontSize: 18, // Specify the font size
+              fontWeight: FontWeight.w600, // Specify the font weight/ Specify the font color
+            ),
+          ),
         centerTitle: true,
       ),
       body: Container(
@@ -36,13 +43,12 @@ class _DaftarModulState extends State<DaftarModul> {
               child: SizedBox(
                 width: 300,
                 child: Text(
-                  'Yuk, Kita belajar dan mengenal dan memperbaiki bumi ini.',
+                  'Yuk, Kita belajar mengenal dan memperbaiki bumi ini.',
                   style: TextStyle(
                     fontSize: 18.0,
-                    // fontFamily: 
+                    fontFamily: 'AbeeZee',
                     ),
                   textAlign: TextAlign.center,
-                  
                 ),
               ),
             ),
