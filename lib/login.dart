@@ -1,5 +1,6 @@
 import 'package:edutrashgo_mobile/register.dart';
 // import 'package:edutrashgo_mobile/homepage.dart';
+// import 'package:edutrashgo_mobile/admin/homepageadmin.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -15,14 +16,44 @@ class _LoginState extends State<Login> {
 
   // Dummy data
   final List<Map<String, String>> _users = [
-    {'username': 'user1', 'password': 'pass1'},
-    {'username': 'user2', 'password': 'pass2'},
-    {'username': '1', 'password': '1'},
+    {'username': 'user', 'password': 'pass', 'role': 'user'},
+    {'username': '1', 'password': '1', 'role': 'user'},
+    {'username': 'admin', 'password': 'admin', 'role': 'admin'},
+    {'username': '2', 'password': '2', 'role': 'admin'},
   ];
 
   void _login() {
     final String username = _usernameController.text;
     final String password = _passwordController.text;
+
+    // Find user
+    final user = _users.firstWhere(
+      (user) => user['username'] == username && user['password'] == password,
+      orElse: () => {}
+    );
+
+    final role = user['role'];
+    
+    if (role == 'admin') {
+      // Navigate to HomeScreenAdmin
+      // Navigator.pushReplacement(
+      //     context, MaterialPageRoute(builder: (context) => const HomeScreenAdmin()));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Selamat Datang Admin!')),
+      );
+    } else if (role == 'user') {
+      // Navigate to HomeScreen
+      // Navigator.pushReplacement(
+      //     context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Selamat Datang!')),
+      );
+    } else {
+      // Failed login
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Username dan Password Salah.')),
+      );
+    }
 
     if (_users.any((user) => user['username'] == username && user['password'] == password)) {
       // Successful login
