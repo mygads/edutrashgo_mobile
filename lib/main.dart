@@ -3,6 +3,8 @@ import 'package:edutrashgo_mobile/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:edutrashgo_mobile/detail_berita.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:edutrashgo_mobile/loadingscreen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +13,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'EduTrashgo',
       theme: ThemeData(
+
         textTheme: GoogleFonts.poppinsTextTheme(),
         
         // This is the theme of your application.
@@ -126,6 +128,10 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+        useMaterial3: true,
+      ),
+      home: const LoadingScreen(),
+
     );
   }
 }
