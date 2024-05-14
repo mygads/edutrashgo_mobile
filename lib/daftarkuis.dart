@@ -11,11 +11,11 @@ class DaftarKuis extends StatefulWidget {
 class _DaftarKuisPage extends State<DaftarKuis> {
   // Buat contoh data daftar kuis
   final List<Map<String, String>> daftarKuis = [
-    {'nama': 'Kuis Pemula 1', 'score': '0/100', 'jumlahKuis': '5 Kuis','gambar': 'luffy.jpeg'},
-    {'nama': 'Kuis Pemula 2', 'score': '0/100', 'jumlahKuis': '10 Kuis','gambar': 'luffy.jpeg'},
-    {'nama': 'Kuis Pemula 3', 'score': '0/100', 'jumlahKuis': '15 Kuis','gambar': 'luffy.jpeg'},
-    {'nama': 'Kuis Pemula 4', 'score': '0/100', 'jumlahKuis': '20 Kuis','gambar': 'luffy.jpeg'},
-    {'nama': 'Kuis Pemula 5', 'score': '0/100', 'jumlahKuis': '25 Kuis','gambar': 'luffy.jpeg'},
+    {'nama': 'Kuis Pemula 1', 'score': '0/100', 'jumlahKuis': '5 Kuis','gambar': 'trash.jpeg'},
+    {'nama': 'Kuis Pemula 2', 'score': '0/100', 'jumlahKuis': '10 Kuis','gambar': 'trash.jpeg'},
+    {'nama': 'Kuis Pemula 3', 'score': '0/100', 'jumlahKuis': '15 Kuis','gambar': 'trash.jpeg'},
+    {'nama': 'Kuis Pemula 4', 'score': '0/100', 'jumlahKuis': '20 Kuis','gambar': 'trash.jpeg'},
+    {'nama': 'Kuis Pemula 5', 'score': '0/100', 'jumlahKuis': '25 Kuis','gambar': 'trash.jpeg'},
   ];
 
   @override
