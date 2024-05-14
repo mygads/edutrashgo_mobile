@@ -17,7 +17,7 @@ class _LoginState extends State<Login> {
   final List<Map<String, String>> _users = [
     {'username': 'user1', 'password': 'pass1'},
     {'username': 'user2', 'password': 'pass2'},
-    {'username': 'user3', 'password': 'pass3'},
+    {'username': '1', 'password': '1'},
   ];
 
   void _login() {
