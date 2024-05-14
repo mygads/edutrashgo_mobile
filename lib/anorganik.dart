@@ -12,8 +12,17 @@ class Anorganik extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
+          color: const Color(0xFFFFBD59),
         ),
-        title: const Text('Sampah Anorganik'),
+        title: const Text(
+            'Sampah Anorganik',
+            style: TextStyle(
+              fontFamily: 'Poppins', // Specify the font family
+              fontSize: 18, // Specify the font size
+              fontWeight: FontWeight.w600,
+              color: Color(0xFFFFBD59), // Specify the font weight/ Specify the font color
+            ),
+          ),
         centerTitle: true,
       ),
       body: Container(
@@ -27,11 +36,11 @@ class Anorganik extends StatelessWidget {
                 child: SizedBox(
                   // width: 300,
                   child: Text(
-                    'Sampah organik itu seperti sisa makanan yang sudah nggak bisa dimakan, daun-daun yang jatuh dari pohon, atau kulit buah. \n\n'
-                    'Nah, sampah ini bisa diubah jadi sesuatu yang bagus buat tanaman, seperti pupuk. Jadi, kalau kita pisahkan sampah yang kayak begini, kita bisa bantu tanah jadi lebih subur!',
+                    'Sampah anorganik itu beda dari sampah lain. Ini kayak botol plastik, kertas, kaleng, atau barang-barang yang nggak bisa rusak sendiri.  \n\n'
+                    'Sampah anorganik, bisa di daur ulang menjadi mainan baru atau benda-benda yang berguna lagi. Jadi, kalau melihat sampah kayak begini, simpan di tempat sampah yang benar ya!',
                     style: TextStyle(
                       fontSize: 16.0,
-                      // fontFamily:
+                      fontFamily: 'Roboto'
                     ),
                     textAlign: TextAlign.center,
                   ),

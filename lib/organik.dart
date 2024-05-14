@@ -12,8 +12,17 @@ class Organik extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
+          color: const Color(0xFF737373),
         ),
-        title: const Text('Sampah Organik'),
+        title: const Text(
+            'Sampah Organik',
+            style: TextStyle(
+              fontFamily: 'Poppins', // Specify the font family
+              fontSize: 18, // Specify the font size
+              fontWeight: FontWeight.w600,
+              color: Color(0xFF737373) // Specify the font weight/ Specify the font color
+            ),
+          ),
         centerTitle: true,
       ),
       body: Container(
@@ -31,7 +40,7 @@ class Organik extends StatelessWidget {
                     'Nah, sampah ini bisa diubah jadi sesuatu yang bagus buat tanaman, seperti pupuk. Jadi, kalau kita pisahkan sampah yang kayak begini, kita bisa bantu tanah jadi lebih subur!',
                     style: TextStyle(
                       fontSize: 16.0,
-                      // fontFamily:
+                      fontFamily: 'Roboto'
                     ),
                     textAlign: TextAlign.center,
                   ),

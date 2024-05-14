@@ -12,8 +12,17 @@ class B3 extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
+          color: const Color(0xFFEB4D4B)
         ),
-        title: const Text('Sampah Organik'),
+        title: const Text(
+            'Sampah B3',
+            style: TextStyle(
+              fontFamily: 'Poppins', // Specify the font family
+              fontSize: 18, // Specify the font size
+              fontWeight: FontWeight.w600,
+              color: Color(0xFFEB4D4B) // Specify the font weight/ Specify the font color
+            ),
+          ),
         centerTitle: true,
       ),
       body: Container(
@@ -27,11 +36,11 @@ class B3 extends StatelessWidget {
                 child: SizedBox(
                   // width: 300,
                   child: Text(
-                    'Sampah organik itu seperti sisa makanan yang sudah nggak bisa dimakan, daun-daun yang jatuh dari pohon, atau kulit buah. \n\n'
-                    'Nah, sampah ini bisa diubah jadi sesuatu yang bagus buat tanaman, seperti pupuk. Jadi, kalau kita pisahkan sampah yang kayak begini, kita bisa bantu tanah jadi lebih subur!',
+                    'Ini sampah yang kita harus lebih hati-hati. Contohnya, baterai yang sudah nggak bisa dipakai, cat, atau obat-obatan.  \n\n'
+                    'Sampah ini punya zat-zat yang bisa membuat orang dan lingkungan jadi sakit. Jadi, kalau ada sampah seperti ini, serahkan pada orang dewasa atau tempat sampah yang khusus.',
                     style: TextStyle(
                       fontSize: 16.0,
-                      // fontFamily:
+                      fontFamily: 'Roboto'
                     ),
                     textAlign: TextAlign.center,
                   ),
