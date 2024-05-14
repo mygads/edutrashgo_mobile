@@ -22,7 +22,11 @@ class _DaftarKuisPage extends State<DaftarKuis> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daftar Kuis'),
+        title: const Text('Daftar Kuis',
+        style: TextStyle(
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w400
+        ),),
       ),
       body: ListView.builder(
         itemCount: daftarKuis.length,
@@ -46,7 +50,7 @@ class _DaftarKuisPage extends State<DaftarKuis> {
                           'Score ${daftarKuis[index]['score']}',
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'poppins',
+                            fontFamily: 'Poppins',
                           ),
                         ),
                       ),
@@ -62,7 +66,11 @@ class _DaftarKuisPage extends State<DaftarKuis> {
                           const SizedBox(width: 8),
                           Text(
                             daftarKuis[index]['nama']!,
-                            style: const TextStyle(fontFamily: 'poppins'),
+                            style: const TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20
+                            ),
                           ),
                         ],
                       ),
@@ -76,6 +84,7 @@ class _DaftarKuisPage extends State<DaftarKuis> {
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.grey,
+                          fontFamily: 'Poppins'
                         ),
                       ),
                       const SizedBox(height: 8), // Spacer

@@ -29,7 +29,10 @@ class DetailTantangan extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Detail Tantangan"),
+        title: Text("Detail Tantangan",
+        style: TextStyle(
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w500),),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -48,7 +51,10 @@ class DetailTantangan extends StatelessWidget {
                       children: [
                         Text(
                           tantangan["title"]!,
-                          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                            fontSize: 18, 
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Poppins'),
                         ),
                         const Icon(Icons.book, size: 24),
                       ],
@@ -56,12 +62,19 @@ class DetailTantangan extends StatelessWidget {
                     const SizedBox(height: 8),
                     Text(
                       tantangan["description"]!,
-                      style: const TextStyle(fontSize: 18, color: Colors.green),
+                      style: const TextStyle(
+                        fontSize: 16, 
+                        color: Colors.green,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w400),
                     ),
                     const SizedBox(height: 8),
                     Text(
                       tantangan["reward"]!,
-                      style: const TextStyle(fontSize: 18),
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Poppins',
+                        fontWeight:FontWeight.w400),
                     ),
                     const SizedBox(height: 8),
                     Row(
@@ -70,7 +83,10 @@ class DetailTantangan extends StatelessWidget {
                         const SizedBox(width: 4),
                         Text(
                           'Tenggat waktu: ${tantangan["deadline"]!}',
-                          style: const TextStyle(fontSize: 18),
+                          style: const TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w400),
                         ),
                       ],
                     ),
@@ -80,8 +96,11 @@ class DetailTantangan extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Misi Kamu',
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              'Misi Kamu :',
+              style: const TextStyle(
+                fontSize: 20, 
+                fontWeight: FontWeight.w600,
+                fontFamily: 'Poppins'),
             ),
             const SizedBox(height: 8),
             Column(
@@ -105,7 +124,9 @@ class DetailTantangan extends StatelessWidget {
                         child: Text(
                           mission["title"]!,
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w400,
                             color: mission["title"] == "Selesaikan 1 Kursus!" ? Colors.black : (mission["completed"] ? Colors.green : Colors.black),
                           ),
                         ),
@@ -122,7 +143,13 @@ class DetailTantangan extends StatelessWidget {
                       //  logika untuk claim reward
                     }
                   : null,
-              child: const Text('Claim'),
+              child: const Text('Claim',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 12,
+                fontWeight: FontWeight.w400
+              ),
+              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: isMissionCompleted ? Colors.green : Colors.grey,
               ),

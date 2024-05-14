@@ -77,7 +77,11 @@ class _KuisPage extends State<Kuis> {
       appBar: AppBar(
         title: Row(
           children: [
-            const Text('Kuis Pemula 1'),
+            const Text('Kuis Pemula 1',style: 
+            TextStyle(
+              fontFamily:'Poppins',
+              fontWeight: FontWeight.w500,
+            ),),
             const Spacer(),
             Text('${_currentQuestionIndex + 1}/${_questions.length}'),
           ],
@@ -130,7 +134,10 @@ class _KuisPage extends State<Kuis> {
     return Text(
       questionText,
       textAlign: TextAlign.center,
-      style: const TextStyle(fontSize: 16),
+      style: const TextStyle(
+        fontSize: 16,
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w400),
     );
   }
 
@@ -160,12 +167,18 @@ class _KuisPage extends State<Kuis> {
           children: [
             Text(
               option,
-              style: const TextStyle(fontSize: 16),
+              style: const TextStyle(
+                fontSize: 18,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w400),
             ),
             const SizedBox(width: 8),
             Text(
               title,
-              style: const TextStyle(fontSize: 14),
+              style: const TextStyle(
+                fontSize: 18,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w400),
             ),
           ],
         ),
@@ -176,7 +189,11 @@ class _KuisPage extends State<Kuis> {
   Widget _buildNextButton() {
     return ElevatedButton(
       onPressed: _nextQuestion,
-      child: const Text('SELANJUTNYA'),
+      child: const Text('SELANJUTNYA',
+      style: TextStyle(
+        fontFamily:'Poppins',
+        fontSize: 16,
+        fontWeight: FontWeight.w500),),
     );
   }
 }

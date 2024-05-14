@@ -70,7 +70,10 @@ class _DaftarTantanganPage extends State<DaftarTantangan> {
                 children: [
                   Text(
                     tantangan["title"]!,
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      fontSize: 18, 
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Poppins'),
                   ),
                   const Icon(Icons.book, size: 24),
                 ],
@@ -78,12 +81,19 @@ class _DaftarTantanganPage extends State<DaftarTantangan> {
               const SizedBox(height: 8),
               Text(
                 tantangan["description"]!,
-                style: const TextStyle(fontSize: 16, color: Colors.green),
+                style: const TextStyle(
+                  fontSize: 16, 
+                  color: Colors.green,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400),
               ),
               const SizedBox(height: 8),
               Text(
                 tantangan["reward"]!,
-                style: const TextStyle(fontSize: 16),
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontFamily: 'Poppins',
+                  fontWeight:FontWeight.w400),
               ),
               const SizedBox(height: 8),
               Row(
@@ -92,7 +102,10 @@ class _DaftarTantanganPage extends State<DaftarTantangan> {
                   const SizedBox(width: 4),
                   Text(
                     'Tenggat waktu: ${tantangan["deadline"]!}',
-                    style: const TextStyle(fontSize: 16),
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
@@ -107,7 +120,11 @@ class _DaftarTantanganPage extends State<DaftarTantangan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daftar Tantangan'),
+        title: const Text('Daftar Tantangan',
+        style: TextStyle(
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w500,
+        ),),
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(8),
