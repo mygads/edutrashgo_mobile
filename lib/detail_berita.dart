@@ -14,11 +14,8 @@ class _DetailBeritaState extends State<DetailBerita> {
         appBar: AppBar(
           title: const Row(
             children: <Widget>[
-              Expanded(
-                // Expanded untuk menempatkan teks di tengah
-                child: Text(
+                Text(
                   'Tentang Berita',
-                  // textAlign: TextAlign.center, // Atur teks ke tengah
                   style: TextStyle(
                     decoration: TextDecoration.none,
                     fontSize: 18,
@@ -27,7 +24,7 @@ class _DetailBeritaState extends State<DetailBerita> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
+              
             ],
           ),
         ),

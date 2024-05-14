@@ -22,15 +22,14 @@ class _HomeBeritaState extends State<HomeBerita> {
               //   },
               // ),
 
-              Icon(Icons.arrow_back),
+              // Icon(Icons.arrow_back),
 
-              SizedBox(width: 9,),
+              // SizedBox(width: 9,),
+
               
-              Expanded(
-                // Expanded untuk menempatkan teks di tengah
-                child: Text(
+
+                Text(
                   'Berita',
-                  // textAlign: TextAlign.center, // Atur teks ke tengah
                   style: TextStyle(
                     decoration: TextDecoration.none,
                     fontSize: 18,
@@ -39,7 +38,7 @@ class _HomeBeritaState extends State<HomeBerita> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
+              
             ],
           ),
         ),
