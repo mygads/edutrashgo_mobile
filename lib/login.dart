@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
     if (_users.any((user) => user['username'] == username && user['password'] == password)) {
       // Successful login
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Login Berhasil!')),
+        const SnackBar(content: Text('Selamat Datang!')),
       );
       // Navigate to HomeScreen
       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
