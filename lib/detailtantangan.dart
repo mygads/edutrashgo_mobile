@@ -4,7 +4,7 @@ class DetailTantangan extends StatelessWidget {
   final Map<String, String> tantangan;
   final bool isMissionCompleted;
 
-  const DetailTantangan({Key? key, required this.tantangan, required this.isMissionCompleted}) : super(key: key);
+  const DetailTantangan({super.key, required this.tantangan, required this.isMissionCompleted});
 
   @override
   Widget build(BuildContext context) {

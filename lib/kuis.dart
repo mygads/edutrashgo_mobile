@@ -1,22 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Edutrashgo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-      ),
-      home: const Kuis(), // Gunakan Kuis sebagai layar utama
-    );
-  }
-}
-
 class Kuis extends StatefulWidget {
-  const Kuis({Key? key}) : super(key: key);
+  const Kuis({super.key});
 
   @override
   State<StatefulWidget> createState() => _KuisPage();
@@ -135,7 +120,7 @@ class _KuisPage extends State<Kuis> {
       questionText,
       textAlign: TextAlign.center,
       style: const TextStyle(
-        fontSize: 16,
+        fontSize: 14,
         fontFamily: 'Poppins',
         fontWeight: FontWeight.w400),
     );
@@ -168,7 +153,7 @@ class _KuisPage extends State<Kuis> {
             Text(
               option,
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 14,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w400),
             ),
@@ -176,7 +161,7 @@ class _KuisPage extends State<Kuis> {
             Text(
               title,
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 14,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w400),
             ),

@@ -2,7 +2,7 @@ import 'package:edutrashgo_mobile/kuis.dart';
 import 'package:flutter/material.dart';
 
 class DaftarKuis extends StatefulWidget {
-  const DaftarKuis({Key? key}) : super(key: key);
+  const DaftarKuis({super.key});
 
   @override
   State<StatefulWidget> createState() => _DaftarKuisPage();
