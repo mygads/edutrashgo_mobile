@@ -34,41 +34,73 @@ class _LoginState extends State<Login> {
     );
 
     final role = user['role'];
-    
-    if (role == 'admin') {
-      // Navigate to HomeScreenAdmin
-      // Navigator.pushReplacement(
-      //     context, MaterialPageRoute(builder: (context) => const HomeScreenAdmin()));
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Selamat Datang Admin!')),
-      );
-    } else if (role == 'user') {
-      // Navigate to HomeScreen
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const HomeScreen()));
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Selamat Datang!')),
-      );
-    } else {
-      // Failed login
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Username dan Password Salah.')),
-      );
-    }
 
     if (_users.any((user) => user['username'] == username && user['password'] == password)) {
       // Successful login
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Selamat Datang!')),
-      );
+      // ScaffoldMessenger.of(context).showSnackBar(
+      //   const SnackBar(content: Text('Selamat Datang!')),
+      // );
       // Navigate to HomeScreen
       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+        if (role == 'admin') {
+        // Navigate to HomeScreenAdmin
+        // Navigator.pushReplacement(
+        //     context, MaterialPageRoute(builder: (context) => const HomeScreenAdmin()));
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Selamat Datang Admin!')),
+        );
+      } else if (role == 'user') {
+        // Navigate to HomeScreen
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Selamat Datang!')),
+        );
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+      } else {
+        // Failed login
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Username dan Password Salah.')),
+        );
+      }
+      
     } else {
       // Failed login
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Username dan Password Salah.')),
       );
     }
+    
+    // if (role == 'admin') {
+    //   // Navigate to HomeScreenAdmin
+    //   // Navigator.pushReplacement(
+    //   //     context, MaterialPageRoute(builder: (context) => const HomeScreenAdmin()));
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(content: Text('Selamat Datang Admin!')),
+    //   );
+    // } else if (role == 'user') {
+    //   // Navigate to HomeScreen
+    //   Navigator.pushReplacement(
+    //       context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+    // } else {
+    //   // Failed login
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(content: Text('Username dan Password Salah.')),
+    //   );
+    // }
+
+    // if (_users.any((user) => user['username'] == username && user['password'] == password)) {
+    //   // Successful login
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(content: Text('Selamat Datang!')),
+    //   );
+    //   // Navigate to HomeScreen
+    //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+    // } else {
+    //   // Failed login
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(content: Text('Username dan Password Salah.')),
+    //   );
+    // }
   }
 
   @override

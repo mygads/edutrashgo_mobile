@@ -97,7 +97,7 @@ class _DaftarKuisPage extends State<DaftarKuis> {
                 // Implementasi aksi ketika kuis diklik
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Kuis()),
+                  MaterialPageRoute(builder: (context) => const Kuis()),
                 );
               },
             ),
