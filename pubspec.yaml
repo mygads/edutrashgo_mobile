@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^6.2.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -61,9 +62,48 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/plastik.jpeg
-    - assets/images/r3.jpeg
-    - assets/images/trash.jpeg
+
+    
+
+  - assets/images/JenisSampah.png
+  - assets/images/DaurUlang.png
+  - assets/images/Organik.png
+  - assets/images/Anorganik.png
+  - assets/images/B3.png
+  - assets/images/Organik1.png
+  - assets/images/Organik2.png
+  - assets/images/Organik3.png
+  - assets/images/Organik4.png
+  - assets/images/Organik5.png
+  - assets/images/Organik6.png
+  - assets/images/Organik7.png
+  - assets/images/Anorganik (1).png
+  - assets/images/Anorganik (2).png
+  - assets/images/Anorganik (3).png
+  - assets/images/Anorganik (4).png
+  - assets/images/Anorganik (5).png
+  - assets/images/Anorganik (6).png
+  - assets/images/Anorganik (7).png
+  - assets/images/B3 (1).png
+  - assets/images/B3 (2).png
+  - assets/images/B3 (3).png
+  - assets/images/B3 (4).png
+  - assets/images/B3 (5).png
+  - assets/images/B3 (6).png
+  - assets/images/B3 (7).png
+  - assets/images/Thumbnail (1).png
+  - assets/images/home-bg.png
+  - assets/images/icon-app.png
+  - assets/images/coursemate_text.png
+  - assets/images/image_112013230.png
+  - assets/images/image-berita.png
+  - assets/images/plastik.jpeg
+  - assets/images/r3.jpeg
+  - assets/images/trash.jpeg
+
+  
+  
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -76,20 +116,6 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
   fonts:
   - family: Poppins
     fonts:
@@ -111,3 +137,28 @@ flutter:
         weight: 800
       - asset: fonts/Poppins-Black.ttf
         weight: 900
+  - family: AbeeZee
+    fonts:
+      - asset: fonts/AbeeZee-Regular.ttf
+        weight: 400
+  - family: Roboto
+    fonts:
+      - asset: fonts/Roboto-Regular.ttf
+        weight: 400
+      - asset: fonts/Roboto-Medium.ttf
+        weight: 500
+  - family: Alata
+    fonts:
+      - asset: fonts/Alata-Regular.ttf
+        weight: 400
+
+
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
+

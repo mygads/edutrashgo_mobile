@@ -1,5 +1,6 @@
 import 'package:edutrashgo_mobile/daftarkuis.dart';
 import 'package:flutter/material.dart';
+import 'package:edutrashgo_mobile/loadingscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Edutrashgo',
+      title: 'EduTrashgo',
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const DaftarKuis(), // Gunakan Kuis sebagai layar utama
+      home: const LoadingScreen(),
     );
   }
 }
+
