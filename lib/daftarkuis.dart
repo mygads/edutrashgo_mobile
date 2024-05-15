@@ -58,7 +58,7 @@ class _DaftarKuisPage extends State<DaftarKuis> {
                       Row(
                         children: [
                           Image.asset(
-                            'images/${daftarKuis[index]['gambar']}',
+                            'assets/images/${daftarKuis[index]['gambar']}',
                             height: 50,
                             width: 50,
                             fit: BoxFit.cover,

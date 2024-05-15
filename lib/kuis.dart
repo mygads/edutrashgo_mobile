@@ -14,27 +14,27 @@ class _KuisPage extends State<Kuis> {
     {
       'question': 'Sampah Manakah Yang Berbahaya?',
       'options': ['Kaleng', 'Detergen', 'Daun','kertas'],
-      'image': 'images/trash.jpeg',
+      'image': 'assets/images/trash.jpeg',
     },
     {
       'question': 'Sampah Plastik Termasuk Kedalam Jenis Apa?',
       'options': ['Organik', 'Anorganik', 'B3','Udara'],
-      'image': 'images/plastik.jpeg',
+      'image': 'assets/images/plastik.jpeg',
     },
     {
       'question': 'Mengapa sampah plastik berbahaya bagi lingkungan?',
       'options': ['Karena mudah terurai', 'Karena dapat mencemari tanah dan air', 'Karena mudah didaur ulang','Karena tidak berbau'],
-      'image': 'images/plastik.jpeg',
+      'image': 'assets/images/plastik.jpeg',
     },
     {
       'question': 'Manakah dari berikut ini yang merupakan contoh sampah organik?',
       'options': ['Daun kering', 'Plastik', 'Kaleng bekas','Baterai'],
-      'image': 'images/trash.jpeg',
+      'image': 'assets/images/trash.jpeg',
     },
     {
       'question': 'Apa yang dimaksud dengan 3R dalam pengelolaan sampah?',
       'options': ['Reduce, Reuse, Recycle', 'Rebus, Rawat, Recycle', 'Restoran, Reduce, Recycle','Reduce, Reuse, Rebus'],
-      'image': 'images/trash.jpeg',
+      'image': 'assets/images/trash.jpeg',
     },
     // Tambahkan pertanyaan lainnya di sini
   ];
