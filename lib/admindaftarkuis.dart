@@ -2,7 +2,7 @@ import 'package:edutrashgo_mobile/adminkuis.dart';
 import 'package:flutter/material.dart';
 
 class AdminDaftarKuis extends StatefulWidget {
-  const AdminDaftarKuis({Key? key}) : super(key: key);
+  const AdminDaftarKuis({super.key});
 
   @override
   State<AdminDaftarKuis> createState() => _AdminDaftarKuisState();

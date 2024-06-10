@@ -7,12 +7,12 @@ class AdminKuis extends StatefulWidget {
   final String gambar;
 
   const AdminKuis({
-    Key? key,
+    super.key,
     required this.nama,
     required this.score,
     required this.jumlahKuis,
     required this.gambar,
-  }) : super(key: key);
+  });
 
   @override
   State<AdminKuis> createState() => _AdminKuisPage();
