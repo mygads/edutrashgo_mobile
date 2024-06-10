@@ -1,6 +1,7 @@
 
 import 'package:edutrashgo_mobile/admin/adminTantangan/admin_daftartantangan.dart';
 import 'package:edutrashgo_mobile/admin_berita.dart';
+import 'package:edutrashgo_mobile/admin_daftarmodul.dart';
 import 'package:edutrashgo_mobile/daftarkuis.dart';
 import 'package:edutrashgo_mobile/daftarmodul.dart';
 import 'package:edutrashgo_mobile/login.dart';
@@ -154,7 +155,7 @@ class AdminHomeScreen extends StatelessWidget {
                                       Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => const DaftarModul()),
+                                          builder: (context) => const AdminDaftarModul()),
                                     );
                                     },
                                     //Ukuran dari Card

@@ -1,7 +1,7 @@
 import 'package:edutrashgo_mobile/admin_anorganik.dart';
 import 'package:edutrashgo_mobile/admin_b3.dart';
-import 'package:edutrashgo_mobile/anorganik.dart';
-import 'package:edutrashgo_mobile/b3.dart';
+// import 'package:edutrashgo_mobile/anorganik.dart';
+// import 'package:edutrashgo_mobile/b3.dart';
 import 'package:edutrashgo_mobile/admin_organik.dart';
 import 'package:flutter/material.dart';
 
