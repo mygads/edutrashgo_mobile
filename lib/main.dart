@@ -1,6 +1,6 @@
+import 'package:edutrashgo_mobile/loadingscreen.dart';
 import 'package:flutter/material.dart';
 // import 'package:edutrashgo_mobile/loadingscreen.dart';
-import 'package:edutrashgo_mobile/homescreen.dart';
 // import 'package:edutrashgo_mobile/testapi.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const LoadingScreen(),
     );
   }
 }
