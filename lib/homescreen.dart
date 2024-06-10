@@ -1,10 +1,39 @@
+
 import 'package:edutrashgo_mobile/daftarkuis.dart';
 import 'package:edutrashgo_mobile/daftartantangan.dart';
 import 'package:flutter/cupertino.dart';
+import "package:edutrashgo_mobile/login.dart";
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:edutrashgo_mobile/berita.dart';
 import "package:edutrashgo_mobile/daftarmodul.dart";
+import "package:edutrashgo_mobile/daftarkuis.dart";
+import "package:edutrashgo_mobile/daftartantangan.dart";
+
+void _showLogoutConfirmationDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Konfirmasi Logout'),
+        content: const Text('Apakah Anda Yakin Ingin Keluar?'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(); // Tutup dialog
+            },
+            child: const Text('Batal'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const Login()));
+            },
+            child: const Text('Keluar'),
+          ),
+        ],
+      );
+    },
+  );
+}
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -25,23 +54,14 @@ class HomeScreen extends StatelessWidget {
           actions: <Widget>[
             IconButton(
               icon: const Icon(
-                Icons.person,
+                Icons.exit_to_app, // Changed icon to exit
                 color: Colors.white,
                 size: 25.0,
               ),
-              // Menambahkan tooltip yang akan muncul saat pengguna mengarahkan kursor ke tombol.
-              tooltip: 'Profile',
-              // Menetapkan fungsi yang akan dijalankan ketika tombol ditekan.
+              tooltip: 
+                'Logout', 
               onPressed: () {
-                // Fungsi yang akan dijalankan saat tombol ditekan.
-                // Isi fungsi dapat diisi dengan kode yang ingin dijalankan ketika tombol ditekan.
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //       builder: (context) =>
-
-                //       ), // Ganti CartPage dengan nama halaman Anda.
-                // );
+                _showLogoutConfirmationDialog(context); 
               },
             ),
           ],
@@ -95,7 +115,7 @@ class HomeScreen extends StatelessWidget {
               ),
 
               Container(
-                padding: EdgeInsets.fromLTRB(25, 13, 25, 25),
+                padding: const EdgeInsets.fromLTRB(25, 13, 25, 25),
                 color: const Color(0xFFF1F0F0),
                 child: Container(
                   // color: Colors.black,
@@ -121,7 +141,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Spacer(),
+                                const Spacer(),
                                 //Card 1
                                 Card(
                                     elevation: 0,
@@ -135,11 +155,10 @@ class HomeScreen extends StatelessWidget {
                                       onTap: () {
                                         //Navigasi
                                         Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  DaftarModul()),
-                                        );
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => const DaftarModul()),
+                                      );
                                       },
                                       //Ukuran dari Card
                                       child: SizedBox(
@@ -149,7 +168,7 @@ class HomeScreen extends StatelessWidget {
                                           children: [
                                             //Isi dari Card
                                             Container(
-                                              padding: EdgeInsets.only(top: 25),
+                                              padding: const EdgeInsets.only(top: 25),
                                               // color: Color.fromARGB(
                                               //     255, 235, 109, 109),
                                               width: 126,
@@ -166,7 +185,7 @@ class HomeScreen extends StatelessWidget {
                                                                 BorderRadius
                                                                     .circular(
                                                                         16),
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF0DCE98),
                                                           ),
                                                           width: 72,
@@ -181,7 +200,7 @@ class HomeScreen extends StatelessWidget {
                                                     ],
                                                   ),
 
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 10,
                                                   ),
 
@@ -216,14 +235,14 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                       ),
                                     )),
-                                Spacer(),
+                                const Spacer(),
                                 //Card 2
                                 Card(
                                     elevation: 0,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(16),
                                     ),
-                                    color: Color(0xFFFFFFFF),
+                                    color: const Color(0xFFFFFFFF),
                                     clipBehavior: Clip.hardEdge,
                                     child: InkWell(
                                       splashColor: Colors.blue.withAlpha(30),
@@ -232,8 +251,8 @@ class HomeScreen extends StatelessWidget {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const DaftarKuis()),
+                                            builder: (context) => const DaftarKuis()
+                                          ),
                                         );
                                       },
 
@@ -245,7 +264,7 @@ class HomeScreen extends StatelessWidget {
                                           children: [
                                             //Isi dari Card
                                             Container(
-                                              padding: EdgeInsets.only(top: 25),
+                                              padding: const EdgeInsets.only(top: 25),
                                               // color: Color.fromARGB(
                                               //     255, 235, 109, 109),
                                               width: 126,
@@ -262,7 +281,7 @@ class HomeScreen extends StatelessWidget {
                                                                 BorderRadius
                                                                     .circular(
                                                                         16),
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF0DCE98),
                                                           ),
                                                           width: 72,
@@ -277,7 +296,7 @@ class HomeScreen extends StatelessWidget {
                                                     ],
                                                   ),
 
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 10,
                                                   ),
 
@@ -292,7 +311,7 @@ class HomeScreen extends StatelessWidget {
                                                       fontFamily: 'Poppins',
                                                     ),
                                                   ),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 7,
                                                   ),
                                                   const Text(
@@ -313,22 +332,22 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                     )),
 
-                                Spacer(),
+                                const Spacer(),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 13,
                             ),
                             Row(
                               children: [
-                                Spacer(),
+                                const Spacer(),
                                 //Card 3
                                 Card(
                                   elevation: 0,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(16),
                                   ),
-                                  color: Color(0xFFFFFFFF),
+                                  color: const Color(0xFFFFFFFF),
                                   clipBehavior: Clip.hardEdge,
                                   child: InkWell(
                                     splashColor: Colors.blue.withAlpha(30),
@@ -337,8 +356,8 @@ class HomeScreen extends StatelessWidget {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) =>
-                                                DaftarTantangan()),
+                                          builder: (context) => const DaftarTantangan()
+                                        ),
                                       );
                                     },
 
@@ -350,7 +369,7 @@ class HomeScreen extends StatelessWidget {
                                         children: [
                                           //Isi dari Card
                                           Container(
-                                            padding: EdgeInsets.only(top: 25),
+                                            padding: const EdgeInsets.only(top: 25),
                                             // color: Color.fromARGB(
                                             //     255, 235, 109, 109),
                                             width: 126,
@@ -367,7 +386,7 @@ class HomeScreen extends StatelessWidget {
                                                               BorderRadius
                                                                   .circular(16),
                                                           color:
-                                                              Color(0xFF0DCE98),
+                                                              const Color(0xFF0DCE98),
                                                         ),
                                                         width: 72,
                                                         height: 72,
@@ -381,7 +400,7 @@ class HomeScreen extends StatelessWidget {
                                                   ],
                                                 ),
 
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 10,
                                                 ),
 
@@ -395,7 +414,7 @@ class HomeScreen extends StatelessWidget {
                                                     fontFamily: 'Poppins',
                                                   ),
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 7,
                                                 ),
                                                 const Text(
@@ -417,7 +436,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 ),
 
-                                Spacer(),
+                                const Spacer(),
 
                                 //Card 4
                                 Card(
@@ -425,7 +444,7 @@ class HomeScreen extends StatelessWidget {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(16),
                                   ),
-                                  color: Color(0xFFFFFFFF),
+                                  color: const Color(0xFFFFFFFF),
                                   clipBehavior: Clip.hardEdge,
                                   child: InkWell(
                                     splashColor: Colors.blue.withAlpha(30),
@@ -434,7 +453,7 @@ class HomeScreen extends StatelessWidget {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => HomeBerita()),
+                                            builder: (context) => const HomeBerita()),
                                       );
                                     },
 
@@ -446,7 +465,7 @@ class HomeScreen extends StatelessWidget {
                                         children: [
                                           //Isi dari Card
                                           Container(
-                                            padding: EdgeInsets.only(top: 25),
+                                            padding: const EdgeInsets.only(top: 25),
                                             // color: Color.fromARGB(
                                             //     255, 235, 109, 109),
                                             width: 126,
@@ -463,7 +482,7 @@ class HomeScreen extends StatelessWidget {
                                                               BorderRadius
                                                                   .circular(16),
                                                           color:
-                                                              Color(0xFF0DCE98),
+                                                              const Color(0xFF0DCE98),
                                                         ),
                                                         width: 72,
                                                         height: 72,
@@ -477,7 +496,7 @@ class HomeScreen extends StatelessWidget {
                                                   ],
                                                 ),
 
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 10,
                                                 ),
 
@@ -491,7 +510,7 @@ class HomeScreen extends StatelessWidget {
                                                     fontFamily: 'Poppins',
                                                   ),
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 7,
                                                 ),
                                                 const Text(
@@ -513,7 +532,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 ),
 
-                                Spacer(),
+                                const Spacer(),
                               ],
                             ),
                           ],
@@ -526,19 +545,34 @@ class HomeScreen extends StatelessWidget {
               //Footer
               Expanded(
                   child: Container(
-                color: Color(0xFF333333),
-                child: Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(left: 20, top: 10, bottom: 6),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Spacer(),
-                          Image.asset(
-                            'assets/images/icon-app.png',
-                            width: 24,
-                            height: 27,
+                  color: const Color(0xFF333333),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding:
+                              const EdgeInsets.only(left: 20, top: 10, bottom: 6),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Spacer(),
+                              Image.asset(
+                                'assets/images/icon-app.png',
+                                width: 24,
+                                height: 27,
+                              ),
+                              const Spacer(),
+                              const Text(
+                                '©2024 | EduTrashgo',
+                                style: TextStyle(
+                                  color: Color(0xFFFFFFFF),
+                                  fontSize: 10,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+
+                              const Spacer()
+                            ],
                           ),
                           Spacer(),
                           Text(

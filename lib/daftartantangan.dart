@@ -1,5 +1,9 @@
-import 'package:edutrashgo_mobile/detailtantangan.dart';
+import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
+import 'package:http/http.dart' as http;
+import 'detailtantangan.dart';
 
 class DaftarTantangan extends StatefulWidget {
   const DaftarTantangan({super.key});
@@ -9,32 +13,44 @@ class DaftarTantangan extends StatefulWidget {
 }
 
 class _DaftarTantanganPage extends State<DaftarTantangan> {
-  final List<Map<String, String>> tantanganList = [
-    {
-      "title": "Tantangan 1",
-      "description": "Selesaikan Tantangan",
-      "reward": "Dapatkan Voucher 5.000",
-      "deadline": "07/07/2023"
-    },
-    {
-      "title": "Tantangan 2",
-      "description": "Selesaikan Tantangan",
-      "reward": "Dapatkan Voucher 10.000",
-      "deadline": "15/08/2023"
-    },
-    // Tambahkan tantangan lain di sini
-  ];
+  List<dynamic> tantanganList = [];
 
-  Widget buildTantanganCard(Map<String, String> tantangan) {
+  @override
+  void initState() {
+    super.initState();
+    fetchTantangan();
+  }
+
+  Future<void> fetchTantangan() async {
+    try {
+      final response = await http.get(Uri.parse('http://10.0.2.2:8000/api/tantangan'));
+
+      if (response.statusCode == 200) {
+        final result = json.decode(response.body);
+        setState(() {
+          tantanganList = result['data'] ?? [];
+        });
+      } else {
+        throw Exception('Failed to load tantangan');
+      }
+    } on SocketException {
+      // Handle the socket exception here
+    } catch (e) {
+      // Handle other exceptions here
+    }
+  }
+
+  Widget buildTantanganCard(Map<String, dynamic> tantangan) {
     return GestureDetector(
       onTap: () {
-        bool isMissionCompleted = false; // Gantilah logika ini dengan logika yang sesuai
+        bool isMissionCompleted = false; // Replace this logic with the appropriate one
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => DetailTantangan(
-              tantangan: tantangan,
+              idTantangan: tantangan['id_tantangan'] as int,
               isMissionCompleted: isMissionCompleted,
+              tantangan: tantangan,
             ),
           ),
         );
@@ -50,31 +66,31 @@ class _DaftarTantanganPage extends State<DaftarTantangan> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    tantangan["title"]!,
+                    tantangan["judul"] ?? "",
                     style: const TextStyle(
-                      fontSize: 18, 
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins'),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Poppins'),
                   ),
                   const Icon(Icons.book, size: 24),
                 ],
               ),
               const SizedBox(height: 8),
               Text(
-                tantangan["description"]!,
+                tantangan["deskripsi"] ?? "",
                 style: const TextStyle(
-                  fontSize: 16, 
-                  color: Colors.green,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w400),
+                    fontSize: 14,
+                    color: Color.fromARGB(255, 93, 93, 93),
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600),
               ),
               const SizedBox(height: 8),
               Text(
-                tantangan["reward"]!,
+                tantangan["hadiah"] ?? "",
                 style: const TextStyle(
-                  fontSize: 16,
-                  fontFamily: 'Poppins',
-                  fontWeight:FontWeight.w400),
+                    fontSize: 16,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600),
               ),
               const SizedBox(height: 8),
               Row(
@@ -82,11 +98,11 @@ class _DaftarTantanganPage extends State<DaftarTantangan> {
                   const Icon(Icons.access_time, size: 16),
                   const SizedBox(width: 4),
                   Text(
-                    'Tenggat waktu: ${tantangan["deadline"]!}',
+                    'Tenggat waktu: ${tantangan["batas_waktu"] ?? ""}',
                     style: const TextStyle(
-                      fontSize: 12,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w400),
+                        fontSize: 12,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
@@ -102,18 +118,19 @@ class _DaftarTantanganPage extends State<DaftarTantangan> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Daftar Tantangan',
-        style: TextStyle(
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w500,
-        ),),
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w500,
+          ),),
       ),
       body: ListView.builder(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(16),
         itemCount: tantanganList.length,
         itemBuilder: (BuildContext context, int index) {
           return buildTantanganCard(tantanganList[index]);
         },
       ),
+      backgroundColor: Color.fromARGB(255, 200, 200, 200),  // Changed background color
     );
   }
 }

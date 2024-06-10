@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:edutrashgo_mobile/detail_berita.dart';
 import 'package:edutrashgo_mobile/berita_model.dart';
+import 'package:edutrashgo_mobile/add_berita_form.dart';
+import 'package:edutrashgo_mobile/edit_berita_form.dart';
 
-class HomeBerita extends StatefulWidget {
-  const HomeBerita({super.key});
+class AdminHomeBerita extends StatefulWidget {
+  const AdminHomeBerita({super.key});
 
   @override
-  State<HomeBerita> createState() => _HomeBeritaState();
+  State<AdminHomeBerita> createState() => _AdminHomeBeritaState();
 }
 
-class _HomeBeritaState extends State<HomeBerita> {
+class _AdminHomeBeritaState extends State<AdminHomeBerita> {
   List<Berita> daftarBerita = [];
   bool isLoading = true;
 
@@ -34,47 +36,76 @@ class _HomeBeritaState extends State<HomeBerita> {
     }
   }
 
+  Future<void> _addBerita() async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const AddBeritaForm()),
+    );
+
+    if (result == true) {
+      fetchBerita();
+    }
+  }
+
+  Future<void> _editBerita(Berita berita) async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => EditBeritaForm(berita: berita)),
+    );
+
+    if (result == true) {
+      fetchBerita();
+    }
+  }
+
+  void _deleteBerita(Berita berita) async {
+    try {
+      await Berita.deleteBerita(berita.idBerita);
+      fetchBerita();
+    } catch (e) {
+      print('Failed to delete berita: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Row(
-          children: <Widget>[
-            Text(
-              'Berita',
-              style: TextStyle(
-                decoration: TextDecoration.none,
-                fontSize: 18,
-                color: Color(0xff000000),
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
+        title: const Text(
+          'Berita',
+          style: TextStyle(
+            decoration: TextDecoration.none,
+            fontSize: 18,
+            color: Color(0xff000000),
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.bold,
+          ),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: _addBerita,
+          ),
+        ],
       ),
       body: isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : SingleChildScrollView(
               padding: const EdgeInsets.only(
-                top: 16.0, right: 24.0, left: 24.0, bottom: 46.0),
+                  top: 16.0, right: 24.0, left: 24.0, bottom: 46.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const Row(
-                    children: [
-                      Text(
-                        'Terkini',
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontSize: 16,
-                          color: Color(0xff000000),
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                  const Text(
+                    'Terkini',
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontSize: 16,
+                      color: Color(0xff000000),
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 16),
                   ListView.builder(
@@ -105,16 +136,16 @@ class _HomeBeritaState extends State<HomeBerita> {
                           child: InkWell(
                             splashColor: Colors.blue.withAlpha(30),
                             onTap: () {
-                              // Navigasi
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => DetailBerita(berita: berita)),
+                                    builder: (context) =>
+                                        DetailBerita(berita: berita)),
                               );
                             },
                             child: Padding(
                               padding: const EdgeInsets.only(
-                                left: 13, top: 11, right: 13, bottom: 11),
+                                  left: 13, top: 11, right: 13, bottom: 11),
                               child: Column(
                                 children: [
                                   Row(
@@ -129,7 +160,7 @@ class _HomeBeritaState extends State<HomeBerita> {
                                       Expanded(
                                         child: Column(
                                           crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               berita.kategori,
@@ -156,13 +187,13 @@ class _HomeBeritaState extends State<HomeBerita> {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 8),
+                                  // const SizedBox(height: 8),
                                   Row(
                                     mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        berita.getFormattedTanggalUpload() ,
+                                        berita.getFormattedTanggalUpload(),
                                         style: const TextStyle(
                                           fontFamily: 'Poppins',
                                           color: Color(0xFF888888),
@@ -170,7 +201,27 @@ class _HomeBeritaState extends State<HomeBerita> {
                                           fontWeight: FontWeight.normal,
                                         ),
                                       ),
-                                      // const Icon(Icons.more_vert),
+                                      PopupMenuButton<String>(
+                                        onSelected: (String value) {
+                                          if (value == 'edit') {
+                                            _editBerita(berita);
+                                          } else if (value == 'delete') {
+                                            _deleteBerita(berita);
+                                          }
+                                        },
+                                        itemBuilder: (BuildContext context) {
+                                          return [
+                                            const PopupMenuItem<String>(
+                                              value: 'edit',
+                                              child: Text('Edit'),
+                                            ),
+                                            const PopupMenuItem<String>(
+                                              value: 'delete',
+                                              child: Text('Hapus'),
+                                            ),
+                                          ];
+                                        },
+                                      ),
                                     ],
                                   ),
                                 ],

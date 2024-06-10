@@ -1,5 +1,5 @@
 import 'package:edutrashgo_mobile/login.dart';
-// import 'package:edutrashgo_mobile/homepage.dart';
+import 'package:edutrashgo_mobile/homescreen.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -39,9 +39,9 @@ class _RegisterState extends State<Register> {
       'password': password});
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Registration successful!')),
-      // Navigate to HomeScreen
-      // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
     );
+    // Navigate to HomeScreen
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
   }
 
   @override

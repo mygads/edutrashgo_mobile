@@ -58,7 +58,7 @@ class _LoadingScreen extends State<LoadingScreen> {
                 ),
                 onPressed: () {
                   // Navigate to the next page
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Login()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Login()));
                 },
                 child: const Text(
                   'Mulai',

@@ -1,0 +1,245 @@
+import 'package:flutter/material.dart';
+
+class AdminOrganik extends StatefulWidget {
+  const AdminOrganik({super.key});
+
+  @override
+  _AdminOrganikState createState() => _AdminOrganikState();
+}
+
+class _AdminOrganikState extends State<AdminOrganik> {
+  List<String> dummyData = [
+    "Organik1",
+    "Organik2",
+    "Organik3",
+    "Organik4",
+    "Organik5",
+  ];
+
+  void _showPopupMenu(BuildContext context, int index) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Wrap(
+          children: [
+            ListTile(
+              leading: const Icon(Icons.update),
+              title: const Text('Update'),
+              onTap: () {
+                Navigator.pop(context);
+                _navigateToUpdateContent(context, index);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.delete),
+              title: const Text('Delete'),
+              onTap: () {
+                Navigator.pop(context);
+                _deleteData(index);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.close),
+              title: const Text('Close'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _navigateToAddContent(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const AddContentScreen()),
+    ).then((newData) {
+      if (newData != null) {
+        setState(() {
+          dummyData.add(newData);
+        });
+      }
+    });
+  }
+
+  void _navigateToUpdateContent(BuildContext context, int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => UpdateContentScreen(data: dummyData[index])),
+    ).then((updatedData) {
+      if (updatedData != null) {
+        setState(() {
+          dummyData[index] = updatedData;
+        });
+      }
+    });
+  }
+
+  void _deleteData(int index) {
+    setState(() {
+      dummyData.removeAt(index);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          color: const Color(0xFF737373),
+        ),
+        title: const Text(
+          'Sampah Organik',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF737373),
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(20.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const Align(
+                alignment: Alignment.topCenter,
+                child: SizedBox(
+                  child: Text(
+                    'Sampah organik itu seperti sisa makanan yang sudah nggak bisa dimakan, daun-daun yang jatuh dari pohon, atau kulit buah. \n\n'
+                    'Nah, sampah ini bisa diubah jadi sesuatu yang bagus buat tanaman, seperti pupuk. Jadi, kalau kita pisahkan sampah yang kayak begini, kita bisa bantu tanah jadi lebih subur!',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontFamily: 'Roboto',
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20.0),
+              Column(
+                children: dummyData.asMap().entries.map((entry) {
+                  int index = entry.key;
+                  String imageName = entry.value;
+                  return GestureDetector(
+                    onTap: () {
+                      _showPopupMenu(context, index);
+                    },
+                    child: Container(
+                      height: 170,
+                      margin: const EdgeInsets.only(bottom: 20.0),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/$imageName.png'),
+                          fit: BoxFit.cover,
+                        ),
+                        color: const Color(0xFF0DCE98),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(50),
+                          topRight: Radius.circular(50),
+                          bottomRight: Radius.circular(50),
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _navigateToAddContent(context),
+        backgroundColor: Colors.green,
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+class AddContentScreen extends StatelessWidget {
+  const AddContentScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    TextEditingController controller = TextEditingController();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Add Content'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              TextFormField(
+                controller: controller,
+                decoration: const InputDecoration(labelText: 'Nama File Organik'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  String newData = controller.text.trim();
+                  if (newData.isNotEmpty) {
+                    Navigator.pop(context, newData);
+                  }
+                },
+                child: const Text('Submit'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class UpdateContentScreen extends StatelessWidget {
+  final String data;
+
+  const UpdateContentScreen({super.key, required this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    TextEditingController controller = TextEditingController(text: data);
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Update Content'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              TextFormField(
+                controller: controller,
+                decoration: const InputDecoration(labelText: 'Nama Gamnbar'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  String updatedData = controller.text.trim();
+                  if (updatedData.isNotEmpty) {
+                    Navigator.pop(context, updatedData);
+                  }
+                },
+                child: const Text('Update'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
