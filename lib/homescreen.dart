@@ -1,3 +1,7 @@
+
+import 'package:edutrashgo_mobile/daftarkuis.dart';
+import 'package:edutrashgo_mobile/daftartantangan.dart';
+import 'package:flutter/cupertino.dart';
 import "package:edutrashgo_mobile/login.dart";
 import 'package:flutter/material.dart';
 import 'package:edutrashgo_mobile/berita.dart';
@@ -570,10 +574,23 @@ class HomeScreen extends StatelessWidget {
                               const Spacer()
                             ],
                           ),
-                        ),
-                      ],
+                          Spacer(),
+                          Text(
+                            '©2024 | EduTrashgo',
+                            style: TextStyle(
+                              color: Color(0xFFFFFFFF),
+                              fontSize: 10,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                          Spacer()
+                        ],
+                      ),
                     ),
-                  )),
+                  ],
+                ),
+              )),
             ]));
   }
 }
