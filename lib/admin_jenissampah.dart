@@ -1,6 +1,8 @@
+import 'package:edutrashgo_mobile/admin_anorganik.dart';
+import 'package:edutrashgo_mobile/admin_b3.dart';
 import 'package:edutrashgo_mobile/anorganik.dart';
 import 'package:edutrashgo_mobile/b3.dart';
-import 'package:edutrashgo_mobile/organik.dart';
+import 'package:edutrashgo_mobile/admin_organik.dart';
 import 'package:flutter/material.dart';
 
 class AdminJenisSampah extends StatelessWidget {
@@ -51,7 +53,7 @@ class AdminJenisSampah extends StatelessWidget {
               children: [
             GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const Organik()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminOrganik()));
               },
               child: Container(
                 height: 170,
@@ -72,7 +74,7 @@ class AdminJenisSampah extends StatelessWidget {
                 const SizedBox(height: 20.0),
                 GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const Anorganik()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminAnorganik()));
               },
               child: Container(
                 height: 170,
@@ -93,7 +95,7 @@ class AdminJenisSampah extends StatelessWidget {
                 const SizedBox(height: 20.0),
                 GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const B3()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminB3()));
               },
               child: Container(
                 height: 170,

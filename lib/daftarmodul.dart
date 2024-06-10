@@ -1,7 +1,9 @@
 
 // import "package:edutrashgo_mobile/admin_jenissampah.dart";
-import "package:edutrashgo_mobile/daurulang.dart";
-import "package:edutrashgo_mobile/jenissampah.dart";
+import "package:edutrashgo_mobile/admin_daurulang.dart";
+import "package:edutrashgo_mobile/admin_jenissampah.dart";
+// import "package:edutrashgo_mobile/daurulang.dart";
+// import "package:edutrashgo_mobile/jenissampah.dart";
 import "package:flutter/material.dart";
 
 
@@ -58,7 +60,7 @@ class _DaftarModulState extends State<DaftarModul> {
               children: [
             GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const JenisSampah()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminJenisSampah()));
               },
               child: Container(
                 height: 170,
@@ -79,7 +81,7 @@ class _DaftarModulState extends State<DaftarModul> {
                 const SizedBox(height: 20.0),
                 GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const DaurUlang()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminDaurUlang()));
               },
               child: Container(
                 height: 170,
