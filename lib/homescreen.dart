@@ -1,3 +1,5 @@
+import 'package:edutrashgo_mobile/admindaftarkuis.dart';
+import 'package:edutrashgo_mobile/daftartantangan.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -133,10 +135,11 @@ class HomeScreen extends StatelessWidget {
                                       onTap: () {
                                         //Navigasi
                                         Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => DaftarModul()),
-                                      );
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DaftarModul()),
+                                        );
                                       },
                                       //Ukuran dari Card
                                       child: SizedBox(
@@ -226,6 +229,12 @@ class HomeScreen extends StatelessWidget {
                                       splashColor: Colors.blue.withAlpha(30),
                                       onTap: () {
                                         //Navigasi
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  AdminDaftarKuis()),
+                                        );
                                       },
 
                                       //Ukuran dari Card
@@ -325,6 +334,12 @@ class HomeScreen extends StatelessWidget {
                                     splashColor: Colors.blue.withAlpha(30),
                                     onTap: () {
                                       //Navigasi
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DaftarTantangan()),
+                                      );
                                     },
 
                                     //Ukuran dari Card
@@ -511,39 +526,37 @@ class HomeScreen extends StatelessWidget {
               //Footer
               Expanded(
                   child: Container(
-                  color: Color(0xFF333333),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding:
-                              EdgeInsets.only(left: 20, top: 10, bottom: 6),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Spacer(),
-                              Image.asset(
-                                'assets/images/icon-app.png',
-                                width: 24,
-                                height: 27,
-                              ),
-                              Spacer(),
-                              Text(
-                                '©2024 | EduTrashgo',
-                                style: TextStyle(
-                                  color: Color(0xFFFFFFFF),
-                                  fontSize: 10,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-
-                              Spacer()
-                            ],
+                color: Color(0xFF333333),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(left: 20, top: 10, bottom: 6),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Spacer(),
+                          Image.asset(
+                            'assets/images/icon-app.png',
+                            width: 24,
+                            height: 27,
                           ),
-                        ),
-                      ],
+                          Spacer(),
+                          Text(
+                            '©2024 | EduTrashgo',
+                            style: TextStyle(
+                              color: Color(0xFFFFFFFF),
+                              fontSize: 10,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                          Spacer()
+                        ],
+                      ),
                     ),
-                  )),
+                  ],
+                ),
+              )),
             ]));
   }
 }

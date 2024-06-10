@@ -1,4 +1,3 @@
-import 'package:edutrashgo_mobile/daftarkuis.dart';
 import 'package:flutter/material.dart';
 import 'package:edutrashgo_mobile/loadingscreen.dart';
 
@@ -20,4 +19,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

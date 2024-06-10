@@ -2,7 +2,7 @@ name: edutrashgo_mobile
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.3 <4.0.0'
+  sdk: ">=3.3.3 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -32,11 +32,10 @@ dependencies:
     sdk: flutter
   google_fonts: ^6.2.1
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
-  google_fonts: ^6.2.1
+  http: any
 
 dev_dependencies:
   flutter_test:
@@ -54,7 +53,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -62,48 +60,45 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-
-    
-
-  - assets/images/JenisSampah.png
-  - assets/images/DaurUlang.png
-  - assets/images/Organik.png
-  - assets/images/Anorganik.png
-  - assets/images/B3.png
-  - assets/images/Organik1.png
-  - assets/images/Organik2.png
-  - assets/images/Organik3.png
-  - assets/images/Organik4.png
-  - assets/images/Organik5.png
-  - assets/images/Organik6.png
-  - assets/images/Organik7.png
-  - assets/images/Anorganik (1).png
-  - assets/images/Anorganik (2).png
-  - assets/images/Anorganik (3).png
-  - assets/images/Anorganik (4).png
-  - assets/images/Anorganik (5).png
-  - assets/images/Anorganik (6).png
-  - assets/images/Anorganik (7).png
-  - assets/images/B3 (1).png
-  - assets/images/B3 (2).png
-  - assets/images/B3 (3).png
-  - assets/images/B3 (4).png
-  - assets/images/B3 (5).png
-  - assets/images/B3 (6).png
-  - assets/images/B3 (7).png
-  - assets/images/Thumbnail (1).png
-  - assets/images/home-bg.png
-  - assets/images/icon-app.png
-  - assets/images/coursemate_text.png
-  - assets/images/image_112013230.png
-  - assets/images/image-berita.png
-  - assets/images/plastik.jpeg
-  - assets/images/r3.jpeg
-  - assets/images/trash.jpeg
-
-  
-  
-
+    - images/logobesar.png
+    - images/panah.png
+    - images/homebawah.png
+    - images/loginbawah.png
+    - assets/images/JenisSampah.png
+    - assets/images/DaurUlang.png
+    - assets/images/Organik.png
+    - assets/images/Anorganik.png
+    - assets/images/B3.png
+    - assets/images/Organik1.png
+    - assets/images/Organik2.png
+    - assets/images/Organik3.png
+    - assets/images/Organik4.png
+    - assets/images/Organik5.png
+    - assets/images/Organik6.png
+    - assets/images/Organik7.png
+    - assets/images/Anorganik (1).png
+    - assets/images/Anorganik (2).png
+    - assets/images/Anorganik (3).png
+    - assets/images/Anorganik (4).png
+    - assets/images/Anorganik (5).png
+    - assets/images/Anorganik (6).png
+    - assets/images/Anorganik (7).png
+    - assets/images/B3 (1).png
+    - assets/images/B3 (2).png
+    - assets/images/B3 (3).png
+    - assets/images/B3 (4).png
+    - assets/images/B3 (5).png
+    - assets/images/B3 (6).png
+    - assets/images/B3 (7).png
+    - assets/images/Thumbnail (1).png
+    - assets/images/home-bg.png
+    - assets/images/icon-app.png
+    - assets/images/coursemate_text.png
+    - assets/images/image_112013230.png
+    - assets/images/image-berita.png
+    - assets/images/plastik.jpeg
+    - assets/images/r3.jpeg
+    - assets/images/trash.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -117,41 +112,40 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-  - family: Poppins
-    fonts:
-      - asset: fonts/Poppins-Thin.ttf
-        weight: 100
-      - asset: fonts/Poppins-ExtraLight.ttf
-        weight: 200
-      - asset: fonts/Poppins-Light.ttf
-        weight: 300
-      - asset: fonts/Poppins-Regular.ttf
-        weight: 400
-      - asset: fonts/Poppins-Medium.ttf
-        weight: 500
-      - asset: fonts/Poppins-SemiBold.ttf
-        weight: 600
-      - asset: fonts/Poppins-Bold.ttf
-        weight: 700
-      - asset: fonts/Poppins-ExtraBold.ttf
-        weight: 800
-      - asset: fonts/Poppins-Black.ttf
-        weight: 900
-  - family: AbeeZee
-    fonts:
-      - asset: fonts/AbeeZee-Regular.ttf
-        weight: 400
-  - family: Roboto
-    fonts:
-      - asset: fonts/Roboto-Regular.ttf
-        weight: 400
-      - asset: fonts/Roboto-Medium.ttf
-        weight: 500
-  - family: Alata
-    fonts:
-      - asset: fonts/Alata-Regular.ttf
-        weight: 400
-
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Thin.ttf
+          weight: 100
+        - asset: fonts/Poppins-ExtraLight.ttf
+          weight: 200
+        - asset: fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: fonts/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: fonts/Poppins-Black.ttf
+          weight: 900
+    - family: AbeeZee
+      fonts:
+        - asset: fonts/AbeeZee-Regular.ttf
+          weight: 400
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
+          weight: 400
+        - asset: fonts/Roboto-Medium.ttf
+          weight: 500
+    - family: Alata
+      fonts:
+        - asset: fonts/Alata-Regular.ttf
+          weight: 400
 
   #   - family: Trajan Pro
   #     fonts:
@@ -161,4 +155,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
