@@ -1,5 +1,5 @@
 
-import 'package:edutrashgo_mobile/admin/admin_daftartantangan.dart';
+import 'package:edutrashgo_mobile/admin/adminTantangan/admin_daftartantangan.dart';
 import 'package:edutrashgo_mobile/berita.dart';
 import 'package:edutrashgo_mobile/daftarkuis.dart';
 import 'package:edutrashgo_mobile/daftarmodul.dart';

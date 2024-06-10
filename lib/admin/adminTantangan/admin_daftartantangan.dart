@@ -2,9 +2,9 @@
 
 import 'dart:convert';
 import 'dart:io';
-import 'package:edutrashgo_mobile/admin/admin_createtantangan.dart';
-import 'package:edutrashgo_mobile/admin/admin_detailtantangan.dart';
-import 'package:edutrashgo_mobile/admin/admin_updatetantangan.dart';
+import 'package:edutrashgo_mobile/admin/adminTantangan/admin_createtantangan.dart';
+import 'package:edutrashgo_mobile/admin/adminTantangan/admin_detailtantangan.dart';
+import 'package:edutrashgo_mobile/admin/adminTantangan/admin_updatetantangan.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
