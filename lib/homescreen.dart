@@ -1,8 +1,35 @@
+import "package:edutrashgo_mobile/login.dart";
 import 'package:flutter/material.dart';
 import 'package:edutrashgo_mobile/berita.dart';
 import "package:edutrashgo_mobile/daftarmodul.dart";
 import "package:edutrashgo_mobile/daftarkuis.dart";
 import "package:edutrashgo_mobile/daftartantangan.dart";
+
+void _showLogoutConfirmationDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Konfirmasi Logout'),
+        content: const Text('Apakah Anda Yakin Ingin Keluar?'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(); // Tutup dialog
+            },
+            child: const Text('Batal'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const Login()));
+            },
+            child: const Text('Keluar'),
+          ),
+        ],
+      );
+    },
+  );
+}
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,23 +50,14 @@ class HomeScreen extends StatelessWidget {
           actions: <Widget>[
             IconButton(
               icon: const Icon(
-                Icons.person,
+                Icons.exit_to_app, // Changed icon to exit
                 color: Colors.white,
                 size: 25.0,
               ),
-              // Menambahkan tooltip yang akan muncul saat pengguna mengarahkan kursor ke tombol.
-              tooltip: 'Profile',
-              // Menetapkan fungsi yang akan dijalankan ketika tombol ditekan.
+              tooltip: 
+                'Logout', 
               onPressed: () {
-                // Fungsi yang akan dijalankan saat tombol ditekan.
-                // Isi fungsi dapat diisi dengan kode yang ingin dijalankan ketika tombol ditekan.
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //       builder: (context) =>
-
-                //       ), // Ganti CartPage dengan nama halaman Anda.
-                // );
+                _showLogoutConfirmationDialog(context); 
               },
             ),
           ],
