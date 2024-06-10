@@ -1,3 +1,4 @@
+import 'package:edutrashgo_mobile/admin/admin_homescreen.dart';
 import 'package:edutrashgo_mobile/register.dart';
 // import 'package:edutrashgo_mobile/homepage.dart';
 // import 'package:edutrashgo_mobile/admin/homepageadmin.dart';
@@ -36,16 +37,10 @@ class _LoginState extends State<Login> {
     final role = user['role'];
 
     if (_users.any((user) => user['username'] == username && user['password'] == password)) {
-      // Successful login
-      // ScaffoldMessenger.of(context).showSnackBar(
-      //   const SnackBar(content: Text('Selamat Datang!')),
-      // );
-      // Navigate to HomeScreen
-      // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
         if (role == 'admin') {
         // Navigate to HomeScreenAdmin
-        // Navigator.pushReplacement(
-        //     context, MaterialPageRoute(builder: (context) => const HomeScreenAdmin()));
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => const AdminHomeScreen()));
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Selamat Datang Admin!')),
         );
@@ -70,37 +65,6 @@ class _LoginState extends State<Login> {
       );
     }
     
-    // if (role == 'admin') {
-    //   // Navigate to HomeScreenAdmin
-    //   // Navigator.pushReplacement(
-    //   //     context, MaterialPageRoute(builder: (context) => const HomeScreenAdmin()));
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(content: Text('Selamat Datang Admin!')),
-    //   );
-    // } else if (role == 'user') {
-    //   // Navigate to HomeScreen
-    //   Navigator.pushReplacement(
-    //       context, MaterialPageRoute(builder: (context) => const HomeScreen()));
-    // } else {
-    //   // Failed login
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(content: Text('Username dan Password Salah.')),
-    //   );
-    // }
-
-    // if (_users.any((user) => user['username'] == username && user['password'] == password)) {
-    //   // Successful login
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(content: Text('Selamat Datang!')),
-    //   );
-    //   // Navigate to HomeScreen
-    //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
-    // } else {
-    //   // Failed login
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(content: Text('Username dan Password Salah.')),
-    //   );
-    // }
   }
 
   @override

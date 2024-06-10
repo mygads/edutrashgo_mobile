@@ -40,6 +40,8 @@ dependencies:
   http: any
   google_fonts: ^6.2.1
   youtube_player_flutter: ^9.0.1
+  intl: any
+
 
 
 dev_dependencies:
@@ -106,6 +108,7 @@ flutter:
   - assets/images/plastik.jpeg
   - assets/images/r3.jpeg
   - assets/images/trash.jpeg
+  - assets/images/postersampah.jpg
 
   
   
