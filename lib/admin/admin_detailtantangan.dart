@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class DetailTantangan extends StatefulWidget {
+class AdminDetailTantangan extends StatefulWidget {
   final bool isMissionCompleted;
   final int idTantangan;
   final Map tantangan;
 
-  const DetailTantangan({
+  const AdminDetailTantangan({
     super.key,
     required this.isMissionCompleted,
     required this.idTantangan,
@@ -16,10 +16,10 @@ class DetailTantangan extends StatefulWidget {
   });
 
   @override
-  _DetailTantanganState createState() => _DetailTantanganState();
+  _AdminDetailTantanganState createState() => _AdminDetailTantanganState();
 }
 
-class _DetailTantanganState extends State<DetailTantangan> {
+class _AdminDetailTantanganState extends State<AdminDetailTantangan> {
   late Future<List<Map<String, dynamic>>> _futureMissions;
   List<bool> _missionStatus = [];
 
@@ -36,7 +36,7 @@ class _DetailTantanganState extends State<DetailTantangan> {
       final data = json.decode(response.body);
       if (data['success'] == true) {
         final missions = List<Map<String, dynamic>>.from(data['data']);
-        _missionStatus = List<bool>.filled(missions.length, true);
+        _missionStatus = List<bool>.filled(missions.length, false);
         return missions;
       } else {
         throw Exception('Failed to load missions');
@@ -48,27 +48,6 @@ class _DetailTantanganState extends State<DetailTantangan> {
 
   bool areAllMissionsCompleted() {
     return _missionStatus.every((status) => status);
-  }
-
-  void updateClaimButton() {
-    setState(() {});
-  }
-
-  void showVoucherCode() {
-    final voucherCode = generateVoucherCode();
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Kode Voucher Anda : $voucherCode'),
-        backgroundColor: Colors.teal[900],
-      ),
-    );
-  }
-
-  String generateVoucherCode() {
-    // Generate a simple voucher code for demonstration
-    final now = DateTime.now();
-    return 'VOUCHER${now.microsecondsSinceEpoch}';
   }
 
   @override
@@ -83,7 +62,6 @@ class _DetailTantanganState extends State<DetailTantangan> {
           ),
         ),
       ),
-      backgroundColor: const Color(0xFFE3E3E3),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: _futureMissions,
         builder: (context, snapshot) {
@@ -100,6 +78,7 @@ class _DetailTantanganState extends State<DetailTantangan> {
           return const Center(child: CircularProgressIndicator());
         },
       ),
+      backgroundColor: const Color(0xFFE3E3E3),  // Changed background color
     );
   }
 
@@ -122,7 +101,7 @@ class _DetailTantanganState extends State<DetailTantangan> {
                       Text(
                         widget.tantangan["judul"] ?? "",
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 20,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Poppins',
                         ),
@@ -140,7 +119,7 @@ class _DetailTantanganState extends State<DetailTantangan> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 4),
                   Text(
                     widget.tantangan["hadiah"] ?? "",
                     style: const TextStyle(
@@ -170,7 +149,7 @@ class _DetailTantanganState extends State<DetailTantangan> {
           ),
           const SizedBox(height: 16),
           const Text(
-            'Misi Kamu :',
+            'Misi :',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
@@ -182,25 +161,9 @@ class _DetailTantanganState extends State<DetailTantangan> {
             final index = entry.key;
             final mission = entry.value;
             return buildMissionItem(mission, index);
-          }).toList(),
+          }),
           const SizedBox(height: 16),
-          ElevatedButton(
-            onPressed: areAllMissionsCompleted()
-                ? showVoucherCode
-                : null,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: areAllMissionsCompleted() ? Colors.teal[900] : Colors.grey,
-            ),
-            child: const Text(
-              'Claim',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: Colors.white
-              ),
-            ),
-          ),
+          
         ],
       ),
     );
@@ -215,8 +178,9 @@ class _DetailTantanganState extends State<DetailTantangan> {
           Checkbox(
             value: _missionStatus[index],
             onChanged: (bool? value) {
-              _missionStatus[index] = value ?? false;
-              updateClaimButton();
+              setState(() {
+                _missionStatus[index] = value ?? false;
+              });
             },
           ),
           Flexible(
@@ -229,7 +193,7 @@ class _DetailTantanganState extends State<DetailTantangan> {
                     fontSize: 16,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w400,
-                    color: _missionStatus[index] ? Colors.grey : Colors.black,
+                    color: _missionStatus[index] ? Colors.green : Colors.black,
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -239,7 +203,7 @@ class _DetailTantanganState extends State<DetailTantangan> {
                     fontSize: 14,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w300,
-                    color: _missionStatus[index] ? Colors.grey : Colors.black,
+                    color: _missionStatus[index] ? Colors.green : Colors.black,
                   ),
                 ),
               ],
