@@ -1,4 +1,4 @@
-import 'package:edutrashgo_mobile/admindaftarkuis.dart';
+import 'package:edutrashgo_mobile/daftarkuis.dart';
 import 'package:edutrashgo_mobile/daftartantangan.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -233,7 +233,7 @@ class HomeScreen extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  AdminDaftarKuis()),
+                                                  const DaftarKuis()),
                                         );
                                       },
 
