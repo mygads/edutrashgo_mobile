@@ -1,13 +1,11 @@
-
 // import "package:edutrashgo_mobile/admin_jenissampah.dart";
-import "package:edutrashgo_mobile/admin_daurulang.dart";
-import "package:edutrashgo_mobile/admin_jenissampah.dart";
+// import "package:edutrashgo_mobile/admin_daurulang.dart";
+// import "package:edutrashgo_mobile/admin_jenissampah.dart";
 import "package:edutrashgo_mobile/daurulang.dart";
 import "package:edutrashgo_mobile/jenissampah.dart";
 // import "package:edutrashgo_mobile/daurulang.dart";
 // import "package:edutrashgo_mobile/jenissampah.dart";
 import "package:flutter/material.dart";
-
 
 class DaftarModul extends StatefulWidget {
   const DaftarModul({super.key});
@@ -17,7 +15,6 @@ class DaftarModul extends StatefulWidget {
 }
 
 class _DaftarModulState extends State<DaftarModul> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,13 +26,14 @@ class _DaftarModulState extends State<DaftarModul> {
         //   },
         // ),
         title: const Text(
-            'Modul Pembelajaran',
-            style: TextStyle(
-              fontFamily: 'Poppins', // Specify the font family
-              fontSize: 18, // Specify the font size
-              fontWeight: FontWeight.w600, // Specify the font weight/ Specify the font color
-            ),
+          'Modul Pembelajaran',
+          style: TextStyle(
+            fontFamily: 'Poppins', // Specify the font family
+            fontSize: 18, // Specify the font size
+            fontWeight: FontWeight
+                .w600, // Specify the font weight/ Specify the font color
           ),
+        ),
         centerTitle: true,
       ),
       body: Container(
@@ -52,7 +50,7 @@ class _DaftarModulState extends State<DaftarModul> {
                   style: TextStyle(
                     fontSize: 18.0,
                     fontFamily: 'AbeeZee',
-                    ),
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -60,43 +58,49 @@ class _DaftarModulState extends State<DaftarModul> {
             const SizedBox(height: 20.0),
             Column(
               children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const JenisSampah()));
-              },
-              child: Container(
-                height: 170,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/JenisSampah.png'),
-                    fit: BoxFit.cover,
-                  ),
-                  color: Color(0xFF078360),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50),
-                    topRight: Radius.circular(50),
-                    bottomRight: Radius.circular(50),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const JenisSampah()));
+                  },
+                  child: Container(
+                    height: 170,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/JenisSampah.png'),
+                        fit: BoxFit.cover,
+                      ),
+                      color: Color(0xFF078360),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50),
+                        topRight: Radius.circular(50),
+                        bottomRight: Radius.circular(50),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
                 const SizedBox(height: 20.0),
                 GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const DaurUlang()));
-              },
-              child: Container(
-                height: 170,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/DaurUlang.png'),
-                    fit: BoxFit.cover,
-                  ),
-                  color: Color(0xFF078360),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50),
-                    topRight: Radius.circular(50),
-                    bottomRight: Radius.circular(50),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DaurUlang()));
+                  },
+                  child: Container(
+                    height: 170,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/DaurUlang.png'),
+                        fit: BoxFit.cover,
+                      ),
+                      color: Color(0xFF078360),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50),
+                        topRight: Radius.circular(50),
+                        bottomRight: Radius.circular(50),
                       ),
                     ),
                   ),

@@ -15,7 +15,6 @@ class _AdminAnorganikState extends State<AdminAnorganik> {
     "Anorganik (4)",
     "Anorganik (5)",
     "Anorganik (6)",
-    "Anorganik (7)",
   ];
 
   void _showPopupMenu(BuildContext context, int index) {
@@ -69,7 +68,8 @@ class _AdminAnorganikState extends State<AdminAnorganik> {
   void _navigateToUpdateContent(BuildContext context, int index) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => UpdateContentScreen(data: dummyData[index])),
+      MaterialPageRoute(
+          builder: (context) => UpdateContentScreen(data: dummyData[index])),
     ).then((updatedData) {
       if (updatedData != null) {
         setState(() {

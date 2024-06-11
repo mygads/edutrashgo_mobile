@@ -1,9 +1,9 @@
-
 import 'package:edutrashgo_mobile/admin/adminTantangan/admin_daftartantangan.dart';
 import 'package:edutrashgo_mobile/admin_berita.dart';
 import 'package:edutrashgo_mobile/admin_daftarmodul.dart';
-import 'package:edutrashgo_mobile/daftarkuis.dart';
-import 'package:edutrashgo_mobile/daftarmodul.dart';
+import 'package:edutrashgo_mobile/admindaftarkuis.dart';
+// import 'package:edutrashgo_mobile/daftarkuis.dart';
+// import 'package:edutrashgo_mobile/daftarmodul.dart';
 import 'package:edutrashgo_mobile/login.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +23,8 @@ void _showLogoutConfirmationDialog(BuildContext context) {
           ),
           TextButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const Login()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Login()));
             },
             child: const Text('Logout'),
           ),
@@ -32,8 +33,6 @@ void _showLogoutConfirmationDialog(BuildContext context) {
     },
   );
 }
-
-
 
 class AdminHomeScreen extends StatelessWidget {
   const AdminHomeScreen({super.key});
@@ -58,10 +57,9 @@ class AdminHomeScreen extends StatelessWidget {
                 color: Colors.white,
                 size: 25.0,
               ),
-              tooltip: 
-                'Logout', 
+              tooltip: 'Logout',
               onPressed: () {
-                _showLogoutConfirmationDialog(context); 
+                _showLogoutConfirmationDialog(context);
               },
             ),
           ],
@@ -131,7 +129,7 @@ class AdminHomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                
+
                     //Card
                     Container(
                       padding: const EdgeInsets.only(top: 20),
@@ -153,10 +151,11 @@ class AdminHomeScreen extends StatelessWidget {
                                     onTap: () {
                                       //Navigasi
                                       Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => const AdminDaftarModul()),
-                                    );
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const AdminDaftarModul()),
+                                      );
                                     },
                                     //Ukuran dari Card
                                     child: SizedBox(
@@ -166,7 +165,8 @@ class AdminHomeScreen extends StatelessWidget {
                                         children: [
                                           //Isi dari Card
                                           Container(
-                                            padding: const EdgeInsets.only(top: 25),
+                                            padding:
+                                                const EdgeInsets.only(top: 25),
                                             // color: Color.fromARGB(
                                             //     255, 235, 109, 109),
                                             width: 126,
@@ -181,8 +181,7 @@ class AdminHomeScreen extends StatelessWidget {
                                                             BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      16),
+                                                                  .circular(16),
                                                           color: const Color(
                                                               0xFF0DCE98),
                                                         ),
@@ -197,11 +196,11 @@ class AdminHomeScreen extends StatelessWidget {
                                                     ),
                                                   ],
                                                 ),
-                
+
                                                 const SizedBox(
                                                   height: 10,
                                                 ),
-                
+
                                                 const Text(
                                                   'Kelola Pembelajaran',
                                                   textAlign: TextAlign.center,
@@ -209,8 +208,7 @@ class AdminHomeScreen extends StatelessWidget {
                                                     color: Color(0xFF363636),
                                                     fontSize: 14,
                                                     fontFamily: 'Poppins',
-                                                    fontWeight:
-                                                        FontWeight.w600,
+                                                    fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
                                                 const SizedBox(
@@ -249,11 +247,11 @@ class AdminHomeScreen extends StatelessWidget {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => const DaftarKuis()
-                                        ),
+                                            builder: (context) =>
+                                                const AdminDaftarKuis()),
                                       );
                                     },
-                
+
                                     //Ukuran dari Card
                                     child: SizedBox(
                                       width: 160,
@@ -262,7 +260,8 @@ class AdminHomeScreen extends StatelessWidget {
                                         children: [
                                           //Isi dari Card
                                           Container(
-                                            padding: const EdgeInsets.only(top: 25),
+                                            padding:
+                                                const EdgeInsets.only(top: 25),
                                             // color: Color.fromARGB(
                                             //     255, 235, 109, 109),
                                             width: 126,
@@ -277,8 +276,7 @@ class AdminHomeScreen extends StatelessWidget {
                                                             BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      16),
+                                                                  .circular(16),
                                                           color: const Color(
                                                               0xFF0DCE98),
                                                         ),
@@ -293,7 +291,7 @@ class AdminHomeScreen extends StatelessWidget {
                                                     ),
                                                   ],
                                                 ),
-                
+
                                                 const SizedBox(height: 20),
 
                                                 const Text(
@@ -302,8 +300,7 @@ class AdminHomeScreen extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: Color(0xFF363636),
                                                     fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.w600,
+                                                    fontWeight: FontWeight.w600,
                                                     fontFamily: 'Poppins',
                                                   ),
                                                 ),
@@ -325,7 +322,7 @@ class AdminHomeScreen extends StatelessWidget {
                                       ),
                                     ),
                                   )),
-                
+
                               const Spacer(),
                             ],
                           ),
@@ -350,11 +347,11 @@ class AdminHomeScreen extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const AdminDaftarTantangan()
-                                      ),
+                                          builder: (context) =>
+                                              const AdminDaftarTantangan()),
                                     );
                                   },
-                
+
                                   //Ukuran dari Card
                                   child: SizedBox(
                                     width: 160,
@@ -363,7 +360,8 @@ class AdminHomeScreen extends StatelessWidget {
                                       children: [
                                         //Isi dari Card
                                         Container(
-                                          padding: const EdgeInsets.only(top: 25),
+                                          padding:
+                                              const EdgeInsets.only(top: 25),
                                           // color: Color.fromARGB(
                                           //     255, 235, 109, 109),
                                           width: 126,
@@ -374,18 +372,16 @@ class AdminHomeScreen extends StatelessWidget {
                                                 alignment: Alignment.center,
                                                 children: [
                                                   Container(
-                                                      decoration:
-                                                          BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(16),
-                                                        color:
-                                                            const Color(0xFF0DCE98),
+                                                        color: const Color(
+                                                            0xFF0DCE98),
                                                       ),
                                                       width: 72,
                                                       height: 72,
-                                                      child:
-                                                          const SizedBox()),
+                                                      child: const SizedBox()),
                                                   const Icon(
                                                     Icons.emoji_events,
                                                     color: Colors.white,
@@ -393,11 +389,11 @@ class AdminHomeScreen extends StatelessWidget {
                                                   ),
                                                 ],
                                               ),
-                
+
                                               const SizedBox(
                                                 height: 10,
                                               ),
-                
+
                                               const Text(
                                                 'Kelola Tantangan',
                                                 textAlign: TextAlign.center,
@@ -416,8 +412,7 @@ class AdminHomeScreen extends StatelessWidget {
                                                 style: TextStyle(
                                                   color: Color(0xFF82A6B0),
                                                   fontSize: 10,
-                                                  fontWeight:
-                                                      FontWeight.normal,
+                                                  fontWeight: FontWeight.normal,
                                                   fontFamily: 'Poppins',
                                                 ),
                                               ),
@@ -429,9 +424,9 @@ class AdminHomeScreen extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                
+
                               const Spacer(),
-                
+
                               //Card 4
                               Card(
                                 elevation: 0,
@@ -447,10 +442,11 @@ class AdminHomeScreen extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => const AdminHomeBerita()),
+                                          builder: (context) =>
+                                              const AdminHomeBerita()),
                                     );
                                   },
-                
+
                                   //Ukuran Card
                                   child: SizedBox(
                                     width: 160,
@@ -459,7 +455,8 @@ class AdminHomeScreen extends StatelessWidget {
                                       children: [
                                         //Isi dari Card
                                         Container(
-                                          padding: const EdgeInsets.only(top: 25),
+                                          padding:
+                                              const EdgeInsets.only(top: 25),
                                           // color: Color.fromARGB(
                                           //     255, 235, 109, 109),
                                           width: 126,
@@ -470,18 +467,16 @@ class AdminHomeScreen extends StatelessWidget {
                                                 alignment: Alignment.center,
                                                 children: [
                                                   Container(
-                                                      decoration:
-                                                          BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(16),
-                                                        color:
-                                                            const Color(0xFF0DCE98),
+                                                        color: const Color(
+                                                            0xFF0DCE98),
                                                       ),
                                                       width: 72,
                                                       height: 72,
-                                                      child:
-                                                          const SizedBox()),
+                                                      child: const SizedBox()),
                                                   const Icon(
                                                     Icons.newspaper,
                                                     color: Colors.white,
@@ -489,11 +484,11 @@ class AdminHomeScreen extends StatelessWidget {
                                                   ),
                                                 ],
                                               ),
-                
+
                                               const SizedBox(
                                                 height: 20,
                                               ),
-                
+
                                               const Text(
                                                 'Kelola Berita',
                                                 textAlign: TextAlign.center,
@@ -512,8 +507,7 @@ class AdminHomeScreen extends StatelessWidget {
                                                 style: TextStyle(
                                                   color: Color(0xFF82A6B0),
                                                   fontSize: 10,
-                                                  fontWeight:
-                                                      FontWeight.normal,
+                                                  fontWeight: FontWeight.normal,
                                                   fontFamily: 'Poppins',
                                                 ),
                                               ),
@@ -525,7 +519,7 @@ class AdminHomeScreen extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                
+
                               const Spacer(),
                             ],
                           ),
@@ -538,39 +532,38 @@ class AdminHomeScreen extends StatelessWidget {
               //Footer
               Expanded(
                   child: Container(
-                  color: const Color(0xFF333333),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding:
-                              const EdgeInsets.only(left: 20, top: 10, bottom: 6),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Spacer(),
-                              Image.asset(
-                                'assets/images/icon-app.png',
-                                width: 24,
-                                height: 27,
-                              ),
-                              const Spacer(),
-                              const Text(
-                                '©2024 | EduTrashgo',
-                                style: TextStyle(
-                                  color: Color(0xFFFFFFFF),
-                                  fontSize: 10,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-
-                              const Spacer()
-                            ],
+                color: const Color(0xFF333333),
+                child: Row(
+                  children: [
+                    Container(
+                      padding:
+                          const EdgeInsets.only(left: 20, top: 10, bottom: 6),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Spacer(),
+                          Image.asset(
+                            'assets/images/icon-app.png',
+                            width: 24,
+                            height: 27,
                           ),
-                        ),
-                      ],
+                          const Spacer(),
+                          const Text(
+                            '©2024 | EduTrashgo',
+                            style: TextStyle(
+                              color: Color(0xFFFFFFFF),
+                              fontSize: 10,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                          const Spacer()
+                        ],
+                      ),
                     ),
-                  )),
+                  ],
+                ),
+              )),
             ]));
   }
 }
